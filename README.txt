@@ -1,1 +1,1 @@
-A Whole New MOOC
+A Whole New MOOC HCDE Capstone Prototype
