@@ -1,52 +1,78 @@
 @charset "utf-8";
-/* CSS Document */
-html, body, div, span, object, iframe,
-h1, h2, h3, h4, h5, h6, p, blockquote, pre,
-abbr, address, cite, code,
-del, dfn, em, img, ins, kbd, q, samp,
-small, strong, sub, sup, var,
-b, i,
-dl, dt, dd, ol, ul, li,
-fieldset, form, label, legend,
-table, caption, tbody, tfoot, thead, tr, th, td,
-article, aside, canvas, details, figcaption, figure, 
-footer, header, hgroup, menu, nav, section, summary,
-time, mark, audio, video {
-    margin:0;
-    padding:0;
-    border:0;
-    outline:0;
-    font-size:100%;
-    vertical-align:baseline;
-    background:transparent;
+@font-face {
+    font-family: 'clearsansregular';
+    src: url('clearsans/ClearSans-Regular-webfont.eot');
+    src: url('clearsans/ClearSans-Regular-webfont.eot?#iefix') format('embedded-opentype'),
+         url('clearsans/ClearSans-Regular-webfont.woff') format('woff'),
+         url('clearsans/ClearSans-Regular-webfont.ttf') format('truetype'),
+         url('clearsans/ClearSans-Regular-webfont.svg#clear_sansregular') format('svg');
+    font-weight: normal;
+    font-style: normal;
 }
 
-body {
-    line-height:1;
-	font-size:16px;
+@font-face {
+    font-family: 'clearsansbold';
+    src: url('clearsans/ClearSans-Bold-webfont.eot');
+    src: url('clearsans/ClearSans-Bold-webfont.eot?#iefix') format('embedded-opentype'),
+         url('clearsans/ClearSans-Bold-webfont.woff') format('woff'),
+         url('clearsans/ClearSans-Bold-webfont.ttf') format('truetype'),
+         url('clearsans/ClearSans-Bold-webfont.svg#clear_sansbold') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    outline: 0;
+    font-size: 100%;
+    vertical-align: baseline;
 }
 
 article,aside,details,figcaption,figure,
 footer,header,hgroup,menu,nav,section { 
-    display:block;
+    display: block;
+}
+
+body {
+    line-height: 1em;
+    font-size: 1em;
+    color: #000000;
+    font-family: 'clearsansregular';
+}
+
+h1, h2, h3 {
+    font-weight: normal;    
+    font-family: 'clearsansbold';
 }
 
 h1 {
-	font-size:32px;
-	color: #FFF;
-	font-weight:600;
+	font-size: 2.2em;
+    line-height: 1em;
 }
 
 h2 {
-	font-size:24px;
-	color: #FFF;
-	font-weight:600;
+	font-size: 1.6em;
+    line-height: 1em;
 }
 
 h3 {
-	font-size:16px;
-	color: #FFF;
-	font-weight:600;
+	font-size: 1em;
+    line-height: 1em;
+}
+
+p {
+    line-height: 1.2em;
+    font-size: 1em; 
+}
+
+a {
+    text-decoration: underline;
+}
+
+a:hover, a:focus {
+    text-decoration: none;
 }
 
 blockquote, q {
@@ -57,14 +83,6 @@ blockquote:before, blockquote:after,
 q:before, q:after {
     content:'';
     content:none;
-}
-
-a {
-    margin:0;
-    padding:0;
-    font-size:100%;
-    vertical-align:baseline;
-    background:transparent;
 }
 
 ins {
@@ -98,7 +116,7 @@ hr {
     display:block;
     height:1px;
     border:0;   
-    border-top:1px solid #cccccc;
+    border-top:1px solid #DDDDDD;
     margin:1em 0;
     padding:0;
 }
@@ -107,22 +125,22 @@ input, select {
     vertical-align:middle;
 }
 
-#navigation {
-	max-width:240px;
-	padding:15px;
-	margin: 0 auto;
-	border-right: solid black 2 px;
+nav {
+	width: 210px;
+    min-height: 700px;
+	padding: 15px;
+	float: left;
+	border-right: solid #000000 2px;
+    background-color: #DDDDDD;
 }
 
-#navigation ul li a {
-color: #FFF; 
-text-decoration: none;
+nav ul li a {
+    text-decoration: none;
 }
 
 #content {
-	max-width: 940px;
-	padding:15px;
+    max-width: 900px;
+	padding: 15px;
+    float: left;
 	overflow: hidden;
-	background-color:#FFFFFF;
-	margin: 0 auto;
 }
