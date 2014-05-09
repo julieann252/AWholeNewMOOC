@@ -142,3 +142,58 @@ nav ul li a {
     float: left;
 	overflow: hidden;
 }
+
+.menu-item {
+  background: #fff;
+  width: 200px;
+}
+
+.menu-item h3 {
+  color: #fff;
+  font-size: 1em;
+  font-weight: 600;
+  padding: 7px 12px;
+  background: #a90329;
+}
+
+.menu-item h3 a {
+  color: white;
+  display: block;
+  text-decoration: none;
+  width: 210px;
+}
+
+/*ul Styles*/
+.menu-item ul {
+  background: #fff;
+  font-size: 1em;
+  line-height: 30px;
+  height: 0px; /*Collapses the menu*/
+  list-style-type: none;
+  overflow: hidden;
+  padding: 0px;
+  
+  /*Closing Animation*/
+  -webkit-transition: height 1s ease;
+     -moz-transition: height 1s ease;
+       -o-transition: height 1s ease;
+      -ms-transition: height 1s ease;
+          transition: height 1s ease;
+}
+
+.menu-item ul a {
+  margin-left: 20px;
+  text-decoration: none;
+  color: #aaa;
+  display: block;
+  width: 200px;
+}
+ 
+/*li Styles*/
+.menu-item li {
+  border-bottom: 1px solid #eee;
+}
+ 
+.menu-item li:hover {
+  background: #eee;
+}
