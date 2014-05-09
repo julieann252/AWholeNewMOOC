@@ -1,3 +1,8 @@
+/*Colors
+Dark Purple: #221144, R:34, G:17, B: 68
+Light Purple Grey: #afaeba, R:175, G:174, B:190
+*/
+
 @charset "utf-8";
 @font-face {
     font-family: 'clearsansregular';
@@ -123,77 +128,66 @@ input, select {
     vertical-align:middle;
 }
 
+
+/* Navigation Styles */
+
 nav {
-	width: 210px;
-    min-height: 700px;
-	padding: 15px;
-	float: left;
-	border-right: solid #000000 2px;
-    background-color: #DDDDDD;
+  width: 200px;
+  min-height: 1000px;
+  position: fixed;
+  border-right: solid #221144 2px;
+  background-color: #e0dff2;
+  overflow: hidden;
+  padding-bottom: 15px;
+}
+
+nav h2 {
+  padding: 15px;
+}
+
+nav ul {
+  list-style-type: none;
+  font-family: 'clearsansbold';
+  font-size: 1em;
+  line-height: 1.6em;
+}
+
+nav ul ul {
+  list-style-type: disc;
 }
 
 nav ul li a {
-    text-decoration: none;
+  text-decoration: none;
+  display: block;
+  width:170px;
+  padding-left: 15px;
+  padding-right: 15px;
+  color: #221144;
 }
 
+nav ul li a:hover {
+  background: #221144;
+  color: #FFFFFF;
+}
+
+nav ul ul li a {
+  width: 140px;
+  padding-left: 30px;
+}
+
+nav ul ul li a:hover {
+  background: #d2d1e8;
+  color: #221144;
+}
+
+/* Main Content Styles */
 #content {
-    max-width: 900px;
+  max-width: 900px;
+  margin-left: 205px;
 	padding: 15px;
-    float: left;
 	overflow: hidden;
 }
 
-.menu-item {
-  background: #fff;
-  width: 200px;
-}
 
-.menu-item h3 {
-  color: #fff;
-  font-size: 1em;
-  font-weight: 600;
-  padding: 7px 12px;
-  background: #a90329;
-}
 
-.menu-item h3 a {
-  color: white;
-  display: block;
-  text-decoration: none;
-  width: 210px;
-}
 
-/*ul Styles*/
-.menu-item ul {
-  background: #fff;
-  font-size: 1em;
-  line-height: 30px;
-  height: 0px; /*Collapses the menu*/
-  list-style-type: none;
-  overflow: hidden;
-  padding: 0px;
-  
-  /*Closing Animation*/
-  -webkit-transition: height 1s ease;
-     -moz-transition: height 1s ease;
-       -o-transition: height 1s ease;
-      -ms-transition: height 1s ease;
-          transition: height 1s ease;
-}
-
-.menu-item ul a {
-  margin-left: 20px;
-  text-decoration: none;
-  color: #aaa;
-  display: block;
-  width: 200px;
-}
- 
-/*li Styles*/
-.menu-item li {
-  border-bottom: 1px solid #eee;
-}
- 
-.menu-item li:hover {
-  background: #eee;
-}
