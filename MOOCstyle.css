@@ -1,6 +1,6 @@
 /*Colors
-Dark Purple: #221144, R:34, G:17, B: 68
-Light Purple Grey: #afaeba, R:175, G:174, B:190
+Purple: #3b2c60, rgba(59,44,96)
+Light Purple Grey: #e4e3fc, rgba(228,227,252)
 */
 
 @charset "utf-8";
@@ -68,10 +68,12 @@ h3 {
 p {
     line-height: 1.2em;
     font-size: 1em; 
+    padding-bottom: 10px;
 }
 
 a {
     text-decoration: underline;
+    color: #48377c;
 }
 
 a:hover, a:focus {
@@ -135,14 +137,22 @@ nav {
   width: 200px;
   min-height: 1000px;
   position: fixed;
-  border-right: solid #221144 2px;
-  background-color: #e0dff2;
+  border-right: solid #3b2c60 2px;
+  background-color: #efeff4;
   overflow: hidden;
-  padding-bottom: 15px;
+  box-shadow: 0px 0px 2px rgba(59,44,96, 1);
 }
 
 nav h2 {
   padding: 15px;
+  font-size: 4em;
+  text-shadow: -1px 0px 0px #FFFFFF, 1px 0px 0px #FFFFFF;
+}
+
+nav h2 span{
+  position: relative;
+  left: -15px;
+  color: #3b2c60;
 }
 
 nav ul {
@@ -152,32 +162,29 @@ nav ul {
   line-height: 1.6em;
 }
 
-nav ul ul {
-  list-style-type: disc;
-}
-
 nav ul li a {
   text-decoration: none;
-  display: block;
+  display: inline-block;
   width:170px;
   padding-left: 15px;
   padding-right: 15px;
-  color: #221144;
+  color: #000000;
 }
 
-nav ul li a:hover {
-  background: #221144;
-  color: #FFFFFF;
+nav ul li a:hover, nav .on {
+  background-color: #3b2c60;
+  color: #efeff4;
 }
 
-nav ul ul li a {
+nav ul ul li {
+  padding-left: 15px;
   width: 140px;
-  padding-left: 30px;
 }
 
 nav ul ul li a:hover {
-  background: #d2d1e8;
-  color: #221144;
+  background-color: #efeff4;
+  color: #48377c;
+  text-shadow: 0px 1px 0px #FFFFFF;
 }
 
 /* Main Content Styles */
@@ -188,6 +195,19 @@ nav ul ul li a:hover {
 	overflow: hidden;
 }
 
+.button {
+  padding: 7px;
+  border-radius: 7px;
+  background-color: #3b2c60;
+  color: #efeff4; 
+  font-family: 'clearsansbold';
+  display: inline-block;
+  border: solid #3b2c60 2px;
+}
 
-
-
+.button:hover {
+  background-color: #efeff4 ;
+  color: #3b2c60; 
+  font-family: 'clearsansbold';
+  display: inline-block;
+}

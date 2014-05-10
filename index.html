@@ -9,7 +9,7 @@
 	<!-- End Meta -->
 
 	<!-- Begin Styles -->
-	<link href="MOOCstyleedit.css" rel="stylesheet" type="text/css" media="all" />
+	<link href="MOOCstyle.css" rel="stylesheet" type="text/css" media="all" />
 	<!-- End Styles -->
 
 	<!-- Begin Scripts -->
@@ -20,6 +20,7 @@
 			$(".submenu ul").hide();
 			$(".submenu").click(function(evt) {
 				$(this).children('ul').toggle();
+				$(this).children('a').toggleClass('on');
 				evt.preventDefault();
 			});
 		});
@@ -28,7 +29,7 @@
 </head>
 <body>
 <nav>
-	<h2>Course X</h2>
+	<h2>MO<span>OC</span></h2>
 	<ul id="menu">
 		<li><a href="">Course Home</a></li>
 		<li><a href="">Syllabus</a></li>
