@@ -16,6 +16,18 @@ Light Purple Grey: #e4e3fc, rgba(228,227,252)
 }
 
 @font-face {
+    font-family: 'clearsansmedium';
+    src: url('clearsans/ClearSans-Medium-webfont.eot');
+    src: url('clearsans/ClearSans-Medium-webfont.eot?#iefix') format('embedded-opentype'),
+         url('clearsans/ClearSans-Medium-webfont.woff') format('woff'),
+         url('clearsans/ClearSans-Medium-webfont.ttf') format('truetype'),
+         url('clearsans/ClearSans-Medium-webfont.svg#clear_sans_mediumregular') format('svg');
+    font-weight: normal;
+    font-style: normal;
+
+}
+
+@font-face {
     font-family: 'clearsansbold';
     src: url('clearsans/ClearSans-Bold-webfont.eot');
     src: url('clearsans/ClearSans-Bold-webfont.eot?#iefix') format('embedded-opentype'),
@@ -62,7 +74,7 @@ h2 {
 }
 
 h3 {
-	font-size: 1em;
+	font-size: 1.1em;
 }
 
 p {
@@ -144,9 +156,9 @@ nav {
 }
 
 nav h2 {
-  padding: 15px;
+  padding: 5px 15px;
   font-size: 4em;
-  text-shadow: -1px 0px 0px #FFFFFF, 1px 0px 0px #FFFFFF;
+  text-shadow: -1px 0px 0px #FFFFFF, 1px 0px 0px #FFFFFF, 0px 1px 0px #FFFFFF, 0px -1px 0px #FFFFFF;
 }
 
 nav h2 span{
@@ -157,9 +169,9 @@ nav h2 span{
 
 nav ul {
   list-style-type: none;
+  font-size: 17px;
+  line-height: 26px;
   font-family: 'clearsansbold';
-  font-size: 1em;
-  line-height: 1.6em;
 }
 
 nav ul li a {
@@ -176,8 +188,10 @@ nav ul li a:hover, nav .on {
   color: #efeff4;
 }
 
-nav ul ul li {
-  padding-left: 15px;
+nav ul ul li a {
+  border-left: solid #efeff4 5px;
+  padding-left: 5px;
+  margin-left: 20px;
   width: 140px;
 }
 
@@ -185,6 +199,7 @@ nav ul ul li a:hover {
   background-color: #efeff4;
   color: #48377c;
   text-shadow: 0px 1px 0px #FFFFFF;
+  border-left: solid #3b2c60 5px;
 }
 
 /* Main Content Styles */
