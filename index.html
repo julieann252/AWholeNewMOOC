@@ -17,12 +17,19 @@
 	<script src="http://julieanncampbell.com/js/modernizr.js"></script>
 	<script>
 		$(document).ready(function(){
+			//start nav toggle
 			$("ul ul").hide();
 			$("a.submenu").click(function(evt) {
 				$(this).toggleClass('on');
 				evt.preventDefault();
 				$(this).next('ul').toggle();
 			});
+			//end nav toggle
+
+			//start nav height set
+			navheight = $(window).height();
+			$('nav').css('min-height', navheight);
+			//end nav height set
 		});
 	</script>
 	<!-- End Scripts -->
@@ -33,8 +40,9 @@
 	<ul id="menu">
 		<li><a href="">Course Home</a></li>
 		<li><a href="">Syllabus</a></li>
+		<li><a href="">Gradebook</a></li>
 		<li><a href="">F.A.Q.</a></li>
-		<li><a href="">Forums</a></li>
+		<li><a href="">Discussion Forums</a></li>
 		<li><a href="">Groups</a></li>
 		<li><a href="">Resources</a></li>
 		<li>
@@ -138,10 +146,13 @@
 		Paragraph of text. Paragraph of text. Paragraph of text. Paragraph of text. Paragraph of text. Paragraph of text. Paragraph of text. Paragraph of text. Paragraph of text. Paragraph of text. Paragraph of text. Paragraph of text. Paragraph of text. 
 	</p>
 	<p>
-		Paragraph of text. Paragraph of text. Paragraph of text. Paragraph of text. Paragraph of text. Paragraph of text. Paragraph of text. Paragraph of text. Paragraph of text. Paragraph of text. Paragraph of text. <a href="">A link within a paragraph of text</a>
+		Paragraph of text. Paragraph of text. Paragraph of text. Paragraph of text. Paragraph of text. Paragraph of text. Paragraph of text. Paragraph of text. Paragraph of text. Paragraph of text. Paragraph of text. <a href="cats.com">A link within a paragraph of text</a>
 	</p>
 	<div class="button">
 		Button
+	</div>
+	<div class="box">
+		Here is a box that contains a section of text and possibly buttons.
 	</div>
 </div>
 </body>
