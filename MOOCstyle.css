@@ -67,21 +67,25 @@ h1, h2, h3 {
 
 h1 {
 	font-size: 2.2em;
+  margin-bottom: 15px;
 }
 
 h2 {
 	font-size: 1.6em;
+  margin-bottom: 10px;
 }
 
 h3 {
 	font-size: 1.1em;
+  margin-bottom: 5px;
 }
 
 p {
     line-height: 1.2em;
     font-size: 1em; 
-    padding-bottom: 10px;
+    margin-bottom: 10px;
 }
+
 
 a {
     text-decoration: underline;
@@ -210,6 +214,7 @@ nav ul ul li a:hover {
   float: left;
   max-width: 900px;
 	padding: 15px;
+  padding-left: 20px;
 	overflow: hidden;
 }
 
