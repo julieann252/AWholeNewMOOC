@@ -147,6 +147,7 @@ p {
     line-height: 1.2em;
     font-size: 1em; 
     margin-bottom: 10px;
+    clear:both;
 }
 
 p:last-of-type {
