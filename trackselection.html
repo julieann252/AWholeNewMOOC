@@ -10,6 +10,50 @@
 
 	<!-- Begin Styles -->
 	<link href="MOOCstyle.css" rel="stylesheet" type="text/css" media="all" />
+	<style>
+	/* Track Selection Styles */
+
+		.trackselection {
+		  width:300px;
+		  margin-top: 20px;
+		  margin-right: 20px;
+		  float:left;
+		  height: 380px;
+		  position: relative;
+		}
+
+		.boxhead img {
+		  vertical-align: -21%;
+		  padding-left: 5px;
+		  }
+
+		.boxbody .content {
+		  display: inline-block;
+		  width: 175px;
+		}
+
+		.boxbody .time {
+		  display: inline-block;
+		  width: 100px;
+		}
+
+		.boxbody p:last-of-type {
+		  position: absolute;
+		  bottom: 25px;
+		  left: 0;
+		  text-align: center;
+		  width: 300px;
+		}
+
+		#certificate {
+		  line-height: 27px;
+		}
+
+		#certificate img {
+		  vertical-align: -27%;
+		  padding-right: 5px;
+		}
+	</style>
 	<!-- End Styles -->
 
 	<!-- Begin Scripts -->
@@ -139,25 +183,70 @@
 	</ul>
 </nav>
 <div id="content">
-	<h1>A Whole New MOOC</h1>
-	<h2>Heading 2</h2>
-	<h3>Heading 3</h3>
+	<h1>Select Your Course Track</h1>
+	<h3>Welcome to A Whole New MOOC!</h3>
 	<p>
-		Paragraph of text. Paragraph of text. Paragraph of text. Paragraph of text. Paragraph of text. Paragraph of text. Paragraph of text. Paragraph of text. Paragraph of text. Paragraph of text. Paragraph of text. Paragraph of text. Paragraph of text. 
+		In order to help you get exactly what you want out of this course, please select your course track below.
 	</p>
-	<p>
-		Paragraph of text. Paragraph of text. Paragraph of text. Paragraph of text. Paragraph of text. Paragraph of text. Paragraph of text. Paragraph of text. Paragraph of text. Paragraph of text. Paragraph of text. <a href="cats.com">A link within a paragraph of text</a>
-	</p>
-	<div class="box">
+	<div class="box trackselection">
 		<div class="boxhead">
-			<h2>Here is the box heading</h2>
-			<h3>And the subhead</h2>
+			<h2>Track 1 <img src="book1.png"></h2>
+			<h3>Get a taste of this course!</h3>
 		</div>
-		<p class="boxbody">Here is a the body of the box that contains a section of text and possibly buttons. </p>
+		<div class="boxbody">
+			<p><b class="content">Time Commitment:</b> <span class="time">1-2 hrs/week</span></p>
+			<b>Content:</b>
+			<p><span class="content">Lecture Videos:</span> <span class="time">1-2 hrs</span></p>
+			<p>
+				<button class="button">
+					Join this track
+				</button>
+			</p>
+		</div>
 	</div>
-	<button class="button">
-		Button
-	</button>
+	<div class="box trackselection">
+		<div class="boxhead">
+			<h2>Track 2 <img src="book2.png"></h2>
+			<h3>Explore more of this course!</h3>
+		</div>
+		<div class="boxbody">
+			<p><b class="content">Time Commitment:</b> <span class="time">3-6 hrs/week</span></p>
+			<b>Content:</b>
+			<p>
+				<span class="content">Lecture Videos:</span> <span class="time">1-2 hrs</span>
+				<span class="content">Quizzes:</span> <span class="time">1-2 hrs</span>
+				<span class="content">Course Readings:</span> <span class="time">1-2 hrs</span>
+			</p>
+			<p>
+				<button class="button">
+					Join this track
+				</button>
+			</p>
+		</div>
+	</div>
+	<div class="box trackselection">
+		<div class="boxhead">
+			<h2>Track 3 <img src="book3.png"></h2>
+			<h3>Get the full course experience!</h3>
+		</div>
+		<div class="boxbody">
+			<p><b class="content">Time Commitment:</b> <span class="time">5-9 hrs/week</span></p>
+			<b>Content:</b>
+			<p>
+				<span class="content">Lecture Videos:</span> <span class="time">1-2 hrs</span>
+				<span class="content">Quizzes:</span> <span class="time">1-2 hrs</span>
+				<span class="content">Course Readings:</span> <span class="time">1-2 hrs</span>
+				<span class="content">Assignments:</span> <span class="time">2-3 hrs</span>
+			</p>
+			<p id="certificate"><img src="certificate.png">Get a Certificate of Completion</p>
+			<p> 
+				<b>This is your current track</b><br /><br />
+				<button class="button">
+					Join this track
+				</button>
+			</p>
+		</div>
+	</div>
 </div>
 </body>
 </html>
