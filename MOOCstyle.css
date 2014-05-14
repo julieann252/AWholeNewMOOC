@@ -172,7 +172,9 @@ a:hover, a:focus, a:active {
 
 nav {
   width: 200px;
-  float: left;
+  position: absolute;
+  top: 0;
+  left: 0;
   border-right: 2px solid #3b2c60;
   background-color: #efeff4;
   overflow: hidden;
@@ -229,9 +231,8 @@ nav ul ul li a:hover {
 
 /* Main Content Styles */
 #content {
-  float: left;
-  width: 75%;
-  min-width: 600px;
+  max-width: 900px;
+  margin-left: 200px;
 	padding: 15px;
   padding-left: 20px;
 	overflow: hidden;
