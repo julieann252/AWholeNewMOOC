@@ -15,23 +15,7 @@
 	<!-- Begin Scripts -->
 	<script src="http://julieanncampbell.com/js/jquery-1.11.0.min.js"></script>
 	<script src="http://julieanncampbell.com/js/modernizr.js"></script>
-	<script>
-		$(document).ready(function(){
-			//start nav toggle
-			$("ul ul").hide();
-			$("a.submenu").click(function(evt) {
-				$(this).toggleClass('on');
-				evt.preventDefault();
-				$(this).next('ul').toggle();
-			});
-			//end nav toggle
-
-			//start nav height set
-			navheight = $(document).height();
-			$('nav').css('min-height', navheight);
-			//end nav height set
-		});
-	</script>
+	<script src="nav.js"></script>
 	<!-- End Scripts -->
 </head>
 <body>
