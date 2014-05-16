@@ -167,6 +167,14 @@ a:hover, a:focus, a:active {
     text-decoration: none;
 }
 
+td {
+  padding: 5px;
+  vertical-align: middle;
+}
+
+tr:nth-child(even) {
+    background-color: #efeff4;
+  }
 
 /* Navigation Styles */
 
@@ -239,12 +247,13 @@ nav ul ul li a:hover {
 }
 
 .button {
-  padding: 5px;
+  padding: 6px;
   background-color: #3b2c60;
   color: #efeff4; 
   font-family: 'clearsansbold';
+  font-size: 17px;
   display: inline-block;
-  border: 2px solid #3b2c60;
+  border: 1px solid #3b2c60;
   line-height: 1em;
 }
 
@@ -259,7 +268,7 @@ nav ul ul li a:hover {
 }
 
 .box {
-  border: 2px solid #3b2c60;
+  border: 1px solid #3b2c60;
   display: inline-block;
 }
 
@@ -272,3 +281,29 @@ nav ul ul li a:hover {
 .boxbody {
   padding: 10px;
 }
+
+/* Date Table Styles */
+
+#preferences td, #meetings td {
+    height: 30px;
+    width: 30px;
+    border-left: 1px solid #3b2c60;
+  }
+
+#preferences td.time, #meetings td.time {
+    width: 90px;
+    text-align: left;
+    border: 0px;
+  }
+
+#preferences th, #meetings th {
+    vertical-align: bottom;
+    padding: 5px 3px;
+    height: 15px;
+    width: 30px;
+    font-weight: normal;  
+  }
+
+#preferences .on,  #meetings .on {
+    background-color: #3b2c60;
+  } 
