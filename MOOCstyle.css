@@ -254,7 +254,7 @@ nav ul li a:visited {
   color: #000000;
 }
 
-nav ul li a:hover, nav .on {
+nav ul li a:hover, nav .on, nav .on:visited {
   background-color: #3b2c60;
   color: #efeff4;
 }
@@ -300,7 +300,12 @@ nav ul ul li a:hover {
 
 #content ul {
   list-style-type: square;
-  list-style-position: inside;
+  list-style-position: outside;
+  margin-left: 16px;
+}
+
+#content ul li {
+  padding-bottom: 8px;
 }
 
 .box {

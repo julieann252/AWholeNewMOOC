@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<title>A Whole New MOOC: Choose a Group</title>
+	<title>A Whole New MOOC: Join a Course Group</title>
 	
 	<!-- Begin Meta -->
 	<meta charset="utf-8" />
@@ -24,9 +24,9 @@
 	}
 
 	.groupblock button {
+	  margin-top: 15px;
 	  margin-right: 20px;
 	  margin-left: 20px;
-	  margin-top: 10px;
 	}
 
 	input[type=text] {
@@ -48,6 +48,7 @@
 	label {
 	  display: block;
 	}
+
 
 	#preferences label {
 	  padding-left: 20px;
@@ -72,6 +73,15 @@
 	#preferences p {
 	  padding-top: 15px;
 	  margin-bottom: 5px;
+	}
+
+	#add {
+		display: inline-block;
+		padding-top: 10px;
+		padding-bottom: 5px;
+		padding-left: 17px;
+		text-decoration: none;
+		font-family: 'clearsansbold';
 	}
 
 	</style>
@@ -105,6 +115,19 @@
 		$('#preferences button').click(function() {
 			window.location = "index.html";
 		});
+
+		var memberNumber = 3
+		$("#add").click(function(evt) {
+			memberNumber++
+			if (memberNumber < 10) {
+				var newMember = '<label>'+ memberNumber + '. <input type="text" /></label>';
+				$(this).before(newMember);
+			}
+			else {
+				$(this).html('Max group members reached');
+			}
+			evt.preventDefault();
+		});
 	});
 	</script>
 	<!-- End Scripts -->
@@ -115,11 +138,9 @@
 	<ul id="menu">
 		<li><a href="">Course Home</a></li>
 		<li><a href="">Syllabus</a></li>
-		<li><a href="">Gradebook</a></li>
-		<li><a href="">F.A.Q.</a></li>
+		<li><a href="grouphome.html">Groups</a></li>
 		<li><a href="">Discussion Forums</a></li>
-		<li><a href="">Groups</a></li>
-		<li><a href="">Resources</a></li>
+		<li><a href="">Gradebook</a></li>
 		<li>
 			<a href="" class="submenu">Week 1</a>
 			<ul>
@@ -210,18 +231,19 @@
 				<li><a href="">Readings</a></li>
 			</ul>
 		</li>
-		<li><a href="">Report a Bug</a></li>
 	</ul>
+	<p><img src="bug.png"><a href="">Report a Bug</a></p>
 </nav>
 <div id="content">
 	<h1>Join a Course Group</h1>
 	<h3>What are groups?</h3>
-	<p>
-		If you join a group, you will be placed on a team of five other students and work with them to answer discussion questions and complete projects. You can either join a group with your friends or be placed into a group based on your meeting preferences and location. You should expect an additional time commitment of 2-3 hours per week for group work.
-	</p>
-	<p>
-		Students who join course groups are 75% more likely to complete their course.
-	</p>
+	<ul>
+		<li>Students who join course groups are 75% more likely to complete their course.</li>
+		<li>When you join a group, you will be placed on a team of students and work with them to answer discussion questions and complete projects.</li>
+		<li>You can either join a group with your friends or be placed into a group based on your meeting preferences and location.</li>
+		<li>Group sizes can range from 4 people to 10 people. If you don't have enough friends for a complete group, you can join another partial group.</li> 
+		<li>You should expect an additional time commitment of 2-3 hours per week for group work.</li>
+	</ul>
 
 	<div class="groupblock" id="join">
 		<h3>Do you want to join a group?</h3>
@@ -235,12 +257,12 @@
 	</div>
 	<div class="groupblock" id="names">
 		<h3>Enter your friend's usernames below.</h3>
-		<p>If you do not have a team of five friends, your group will be placed with another partial group.</p>
+		<p>If you do not have a team of at least four, your group will be placed with another partial group.</p>
 		<label>1. <input type="text" /></label>
 		<label>2. <input type="text" /></label>
 		<label>3. <input type="text" /></label>
-		<label>4. <input type="text" /></label>
-		<label>5. <input type="text" /></label>
+		<p><a href="" id="add">+ Add Another Member</a></p>
+
 		<button class="button">Continue</button>
 	</div>
 	<div class="groupblock" id="preferences">
@@ -328,7 +350,7 @@
   				<td class="x">&nbsp;</td>
   			</tr>
   		</table>
-  		<button class="button">Submit</button>
+  		<button class="button">Submit Preferences</button>
 	</div>
 </div>
 </body>
