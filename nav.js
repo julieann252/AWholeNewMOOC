@@ -9,7 +9,7 @@ $(document).ready(function(){
 	//end nav toggle
 
 	//start nav height set
-	function setnav() {
+	setnav = function() {
 		var navheight = $(document).height();
 		$('nav').css('min-height', navheight);
 	}

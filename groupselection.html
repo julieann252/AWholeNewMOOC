@@ -49,7 +49,6 @@
 	  display: block;
 	}
 
-
 	#preferences label {
 	  padding-left: 20px;
 	  margin-top: 5px;
@@ -84,6 +83,10 @@
 		font-family: 'clearsansbold';
 	}
 
+	#friends, #names, #preferences {
+		display: none;
+	}
+
 	</style>
 	<!-- End Styles -->
 
@@ -93,7 +96,6 @@
 	<script src="nav.js"></script>
 	<script>
 	$(document).ready(function() {
-		$("#friends, #names, #preferences").hide();
 		$('.x').click(function() {
 			$(this).toggleClass("on");
 		});
@@ -104,13 +106,18 @@
 				window.location = "index.html";
 		})
 		$('#friends button').click(function() {
-			if ($(this).hasClass("yes")) 
+			if ($(this).hasClass("yes")) {
 				$("#names").fadeIn(500);
+				setnav();
+			}
 			else
 				$("#preferences").fadeIn(500);
 		})
 		$('#names button').click(function() {
 			$("#preferences").fadeIn(500);
+			setnav();
+			var scrollPosition = $(window).scrollTop();
+			$(window).scrollTop(scrollPosition + 550);
 		})
 		$('#preferences button').click(function() {
 			window.location = "index.html";
@@ -122,6 +129,9 @@
 			if (memberNumber < 10) {
 				var newMember = '<label>'+ memberNumber + '. <input type="text" /></label>';
 				$(this).before(newMember);
+				setnav();
+				var scrollPosition = $(window).scrollTop();
+				$(window).scrollTop(scrollPosition + 50);
 			}
 			else {
 				$(this).html('Max group members reached');
