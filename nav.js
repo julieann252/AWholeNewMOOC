@@ -6,6 +6,7 @@ $(document).ready(function(){
 		evt.preventDefault();
 		$(this).next('ul').toggle();
 	});
+	$("a.onpage").next('ul').show();
 	//end nav toggle
 
 	//start nav height set
