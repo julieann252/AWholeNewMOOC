@@ -1,0 +1,409 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>A Whole New MOOC: Quiz</title>
+	
+	<!-- Begin Meta -->
+	<meta charset="utf-8" />
+	<meta name="viewport" content="user-scalable=no, initial-scale=1.0, maximum-scale=1.0" />
+	<!-- End Meta -->
+
+	<!-- Begin Styles -->
+	<link href="MOOCstyle.css" rel="stylesheet" type="text/css" media="all" />
+	<style>
+	/* Quiz Styles */
+	#qnumber {
+	  list-style-type: none;
+	  margin-left: 0px;
+	  width: 579px;
+	  border-top: 1px solid #3b2c60;
+	  border-left: 1px solid #3b2c60;
+	  border-right: 1px solid #3b2c60;
+
+	  background-color: #e4e3fc;
+	}
+
+	#qnumber li {
+	  display: inline-block; 
+	  font-family: 'clearsansbold';
+	  color: #3b2c60;
+	  background-color: #FFFFFF;
+	  padding: 7px;
+	  margin: 10px;
+	  height: 20px;
+	  width: 20px;
+	  text-align: center;
+	  line-height: 19px;
+	  border-radius: 28px;
+	}
+
+	#qnumber li.on {
+	  color: #FFFFFF;
+	  background-color: #3b2c60;
+	}
+
+	input[type=radio] {
+	    display: block;
+	    float: left;
+	    width: 39px;
+	  }
+
+	label {
+	    display: block;
+	    overflow: hidden;
+	    padding-bottom: 10px;
+	    padding-top: 10px;
+	  }
+
+	label span{
+	  display: block;
+	  float: left;
+	  width: 520px;
+	}
+
+	#questionbox {
+	  border-bottom: 1px solid #3b2c60;
+	  border-left: 1px solid #3b2c60;
+	  border-right: 1px solid #3b2c60;
+	  padding: 10px;
+	  width: 559px;
+	  overflow: hidden;
+	}
+
+	#questionbox button {
+	  float: right;
+	  margin-top: 10px;
+	}
+	</style>
+	<!-- End Styles -->
+
+	<!-- Begin Scripts -->
+	<script src="http://julieanncampbell.com/js/jquery-1.11.0.min.js"></script>
+	<script src="http://julieanncampbell.com/js/modernizr.js"></script>
+	<script src="nav.js"></script>
+	<script>
+	var questionNumber = 0;
+	var numCorrect = 0;
+	var attempts = 0;
+	var questions = [
+		 {
+			q: 'Imagine you’re designing the world’s first voice-guided navigation system for a car GPS. You want to find out if drivers can understand and respond to your voice directions while driving a car. Which prototype would you build for this purpose?', 
+			a1: 'Create a video of a person driving on a route, and then add your instructions as voiceover. Show participants this video, and pause the video after each instruction, and ask what participants would do.',
+			a2: 'A paper prototype of the GPS display with multiple “screens” that each shows the map at a different part of a route. The participant evaluates the prototype in a lab. For each screen, the experimenter speaks out the turn directions, and asks the participant what she would do (e.g. “I\’d take the next exit”).',
+			a3: "Create a fully functional system (with a database of routes, directions and voice-clips etc.) on a laptop, and put the laptop in the car. The participant drives the car along the route, and hears the turn directions from the laptop.",
+			a4: "Have pre-determined turn-by-turn directions for a particular route written on a notepad. The experimenter reads out the right directions while the participant drives on the route.",
+			right: "Why this answer is right",
+			wrong: "Suggested help to get the answer right",
+			solution: "2"
+		},
+		{
+			q: "Question 2 text", 
+			a1: "Question 2 Answer 1 text",
+			a2: "Question 2 Answer 2 text",
+			a3: "Question 2 Answer 3 text",
+			a4: "Question 2 Answer 4 text",
+			right: "Why this answer is right",
+			wrong: "Suggested help to get the answer right",
+			solution: "2"
+		},
+		{
+			q: "Question 3 text", 
+			a1: "Question 3 Answer 1 text",
+			a2: "Question 3 Answer 2 text",
+			a3: "Question 3 Answer 3 text",
+			a4: "Question 3 Answer 4 text",
+			right: "Why this answer is right",
+			wrong: "Suggested help to get the answer right",
+			solution: "2"
+		},
+		{
+			q: "Question 4 text", 
+			a1: "Question 4 Answer 1 text",
+			a2: "Question 4 Answer 2 text",
+			a3: "Question 4 Answer 3 text",
+			a4: "Question 4 Answer 4 text",
+			right: "Why this answer is right",
+			wrong: "Suggested help to get the answer right",
+			solution: "2"
+		},
+		{
+			q: "Question 5 text", 
+			a1: "Question 5 Answer 1 text",
+			a2: "Question 5 Answer 2 text",
+			a3: "Question 5 Answer 3 text",
+			a4: "Question 5 Answer 4 text",
+			right: "Why this answer is right",
+			wrong: "Suggested help to get the answer right",
+			solution: "2"
+		},
+		{
+			q: "Question 6 text", 
+			a1: "Question 6 Answer 1 text",
+			a2: "Question 6 Answer 2 text",
+			a3: "Question 6 Answer 3 text",
+			a4: "Question 6 Answer 4 text",
+			right: "Why this answer is right",
+			wrong: "Suggested help to get the answer right",
+			solution: "2"
+		},
+		{
+			q: "Question 7 text", 
+			a1: "Question 7 Answer 1 text",
+			a2: "Question 7 Answer 2 text",
+			a3: "Question 7 Answer 3 text",
+			a4: "Question 7 Answer 4 text",
+			right: "Why this answer is right",
+			wrong: "Suggested help to get the answer right",
+			solution: "2"
+		},
+		{
+			q: "Question 8 text", 
+			a1: "Question 8 Answer 1 text",
+			a2: "Question 8 Answer 2 text",
+			a3: "Question 8 Answer 3 text",
+			a4: "Question 8 Answer 4 text",
+			right: "Why this answer is right",
+			wrong: "Suggested help to get the answer right",
+			solution: "2"
+		},
+		{
+			q: "Question 9 text", 
+			a1: "Question 9 Answer 1 text",
+			a2: "Question 9 Answer 2 text",
+			a3: "Question 9 Answer 3 text",
+			a4: "Question 9 Answer 4 text",
+			right: "Why this answer is right",
+			wrong: "Suggested help to get the answer right",
+			solution: "2"
+		},
+		{
+			q: "Question 10 text", 
+			a1: "Question 10 Answer 1 text",
+			a2: "Question 10 Answer 2 text",
+			a3: "Question 10 Answer 3 text",
+			a4: "Question 10 Answer 4 text",
+			right: "Why this answer is right",
+			wrong: "Suggested help to get the answer right",
+			solution: "2"
+		}
+	];
+
+	var pass = {
+			heading: "Nice Job!",
+			text: "You did great! Keep up the good work and consider checking in on the forums to see if any other students need help completing this quiz."
+		};
+	var fail = {
+			heading: "Nice Try!",
+			text: "It looks like you had a little bit of trouble completing this quiz.<br />We have added an additional video for you this week that will help you master these concepts."
+		};
+
+	$(document).ready(function() {
+		var list = $('#qnumber li');
+		function questionSet() {
+			$('#next').hide();
+			$('#submit').show();
+			$('label').show();
+			$('h3').html('Question ' + (questionNumber + 1) + ':');
+				$('#question').html(questions[questionNumber].q);
+				for (i=1; i<5; i++) {
+					var answerNumber = '#answer' + (i);
+					$(answerNumber).html(questions[questionNumber]["a" + i]);
+				}
+			list.each(function() {
+				$(this).removeClass('on');
+			});
+			list.eq(questionNumber).addClass('on');
+		}
+		function grade() {
+			var answer = $(':checked').val();
+			attempts++;
+			$('label').hide();
+			$('#submit').hide();
+			if (answer == questions[questionNumber].solution) {
+				$('#question').html(questions[questionNumber].right);
+				$('#next').show();
+				if (attempts == 1)
+					numCorrect++;
+			}
+			else {
+				$('#question').html(questions[questionNumber].wrong);
+				$('#try').show();
+			}
+		}
+		function finalGrade() {
+			$('#next').hide();
+			var correctText = (numCorrect + " out of " + questions.length + " correct answers.<br />");
+			if (numCorrect > 5) {
+				$('h3').html(pass.heading);
+				$('#question').html(correctText + pass.text);
+			}
+			else {
+				$('h3').html(fail.heading);
+				$('#question').html(correctText + fail.text);
+			}
+		}
+		$('#next, #try').hide();
+		questionSet();
+		$('#next').click(function() {
+			questionNumber++;
+			attempts = 0;
+			$(':checked').prop('checked', false);
+			if (questionNumber < 10)
+				questionSet();
+			else
+				finalGrade();
+		});
+		$('#submit').click(function() {
+			grade();
+		});
+		$('#try').click(function() {
+			$('#try').hide();
+			questionSet();
+		})
+	});
+	</script>
+	<!-- End Scripts -->
+</head>
+<body>
+<nav>
+	<h2>MO<span>OC</span></h2>
+	<ul id="menu">
+		<li><a href="">Course Home</a></li>
+		<li><a href="">Syllabus</a></li>
+		<li><a href="grouphome.html">Groups</a></li>
+		<li><a href="">Discussion Forums</a></li>
+		<li><a href="">Gradebook</a></li>
+		<li>
+			<a href="" class="submenu">Week 1</a>
+			<ul>
+				<li><a href="">Lecture</a></li>
+				<li><a href="">Quiz</a></li>
+				<li><a href="">Assignment</a></li>
+				<li><a href="">Readings</a></li>
+			</ul>
+		</li>
+		<li>
+			<a href="" class="submenu">Week 2</a>
+			<ul>
+				<li><a href="">Lecture</a></li>
+				<li><a href="">Quiz</a></li>
+				<li><a href="">Assignment</a></li>
+				<li><a href="">Readings</a></li>
+			</ul>
+		</li>
+		<li>
+			<a href="" class="submenu">Week 3</a>
+			<ul>
+				<li><a href="">Lecture</a></li>
+				<li><a href="">Quiz</a></li>
+				<li><a href="">Assignment</a></li>
+				<li><a href="">Readings</a></li>
+			</ul>
+		</li>
+		<li>
+			<a href="" class="submenu">Week 4</a>
+			<ul>
+				<li><a href="">Lecture</a></li>
+				<li><a href="">Quiz</a></li>
+				<li><a href="">Assignment</a></li>
+				<li><a href="">Readings</a></li>
+			</ul>
+		</li>
+		<li>
+			<a href="" class="submenu">Week 5</a>
+			<ul>
+				<li><a href="">Lecture</a></li>
+				<li><a href="">Quiz</a></li>
+				<li><a href="">Assignment</a></li>
+				<li><a href="">Readings</a></li>
+			</ul>
+		</li>
+		<li>
+			<a href="" class="submenu">Week 6</a>
+			<ul>
+				<li><a href="">Lecture</a></li>
+				<li><a href="">Quiz</a></li>
+				<li><a href="">Assignment</a></li>
+				<li><a href="">Readings</a></li>
+			</ul>
+		</li>
+		<li>
+			<a href="" class="submenu">Week 7</a>
+			<ul>
+				<li><a href="">Lecture</a></li>
+				<li><a href="">Quiz</a></li>
+				<li><a href="">Assignment</a></li>
+				<li><a href="">Readings</a></li>
+			</ul>
+		</li>
+		<li>
+			<a href="" class="submenu">Week 8</a>
+			<ul>
+				<li><a href="">Lecture</a></li>
+				<li><a href="">Quiz</a></li>
+				<li><a href="">Assignment</a></li>
+				<li><a href="">Readings</a></li>
+			</ul>
+		</li>
+		<li>
+			<a href="" class="submenu">Week 9</a>
+			<ul>
+				<li><a href="">Lecture</a></li>
+				<li><a href="">Quiz</a></li>
+				<li><a href="">Assignment</a></li>
+				<li><a href="">Readings</a></li>
+			</ul>
+		</li>
+		<li>
+			<a href="" class="submenu">Week 10</a>
+			<ul>
+				<li><a href="">Lecture</a></li>
+				<li><a href="">Quiz</a></li>
+				<li><a href="">Assignment</a></li>
+				<li><a href="">Readings</a></li>
+			</ul>
+		</li>
+	</ul>
+	<p><img src="bug.png"><a href="">Report a Bug</a></p>
+</nav>
+<div id="content">
+	<h1>Week X: Quiz</h1>
+
+	<ul id="qnumber">
+		<li class="on">1</li>
+		<li>2</li>
+		<li>3</li>
+		<li>4</li>
+		<li>5</li>
+		<li>6</li>
+		<li>7</li>
+		<li>8</li>
+		<li>9</li>
+		<li>10</li>
+	</ul>
+	<div id="questionbox">
+		<h3>Question 1:</h3>
+			<p id="question"></p>
+		<label>
+			<input type="radio" name="answer" value="1">
+			<span id="answer1"></span>
+		</label>
+		<label>
+			<input type="radio" name="answer" value="2">
+			<span id="answer2"></span>
+		</label>
+		<label>
+			<input type="radio" name="answer" value="3">
+			<span id="answer3"></span>
+		</label>
+		<label>
+			<input type="radio" name="answer" value="4">
+			<span id="answer4"></span>
+		</label>
+		<button class="button" id="submit">Submit</button>
+		<button class="button" id="try">Try Again</button>
+		<button class="button" id="next">Next Question</button>
+	</div>
+</div>
+</body>
+</html>

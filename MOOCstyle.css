@@ -298,13 +298,13 @@ nav ul ul li a:hover {
   color: #3b2c60; 
 }
 
-#content ul {
+div ul {
   list-style-type: square;
   list-style-position: outside;
   margin-left: 16px;
 }
 
-#content ul li {
+div ul li {
   padding-bottom: 8px;
 }
 
