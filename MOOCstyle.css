@@ -312,18 +312,13 @@ div ul li {
 
 .box {
   display: inline-block;
-  background-color: #e4e3fc;
-  border-top: 1px solid #3b2c60;
-  border-left: 1px solid #e4e3fc;
-  border-right: 1px solid #e4e3fc;
+  border: 1px solid #3b2c60;
 
 }
 
 .boxhead {
   padding: 10px;
-  background-color: #FFFFFF;
-  border-left: 1px solid #3b2c60;
-  border-right: 1px solid #3b2c60;
+  background-color: #e4e3fc;
 }
 
 .boxbody {
