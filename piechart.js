@@ -12,8 +12,8 @@ function draw() {
 		];
 	var radius = 100;
 	var opacity = 1;
-	var centerx = 600/2;
-	var centery = 300/2;
+	var centerx = 550/2;
+	var centery = 275/2;
 	
 	function drawSection(color, linex, liney, textx, texty, startRadians, endRadians, text) {
 		ctx.fillStyle = color;
@@ -34,7 +34,6 @@ function draw() {
 			else {
 				texty += ((texty-centery) * 0.1);
 			}
-
 		}
 		else {
 			ctx.textAlign = "right";
@@ -47,7 +46,7 @@ function draw() {
 				texty += ((texty-centery) * 0.1);
 			}
 		}
-		ctx.font = "16px clearsansregular";
+		ctx.font = "16px sans-serif";
   		ctx.fillStyle = "rgba(0,0,0,1)";
   		ctx.fillText(text, textx, texty);
 	}		
@@ -62,7 +61,7 @@ function draw() {
 		var start = arcPlace
 		var end = arcPlace+= sections[i].arc;
 		drawSection(color, linex, liney, textx, texty, start, end, sections[i].text);
-		opacity -= 0.2;
+		opacity -= 0.199;
 	}
 
 	ctx.beginPath();

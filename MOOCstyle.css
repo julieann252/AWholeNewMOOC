@@ -1,6 +1,8 @@
 /*Colors
-Purple: #3b2c60, rgba(59,44,96)
-Light Purple Grey: #e4e3fc, rgba(228,227,252)
+Dark Purple: #3b2c60, rgb(59,44,96)
+Medium Purple: #7468a5, rgb(116,104,165)
+Lighter Purple: #b0b0d1, rgb(176,176,209)
+Lightest Purple Grey: #e4e3fc, rgb(228,227,252)
 */
 
 /* Fonts */
@@ -309,14 +311,19 @@ div ul li {
 }
 
 .box {
-  border: 1px solid #3b2c60;
   display: inline-block;
+  background-color: #e4e3fc;
+  border-top: 1px solid #3b2c60;
+  border-left: 1px solid #e4e3fc;
+  border-right: 1px solid #e4e3fc;
+
 }
 
 .boxhead {
   padding: 10px;
-  padding-bottom:5px;
-  background-color: #efeff4 ;
+  background-color: #FFFFFF;
+  border-left: 1px solid #3b2c60;
+  border-right: 1px solid #3b2c60;
 }
 
 .boxbody {
