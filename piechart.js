@@ -1,6 +1,10 @@
 function draw() {
 	var canvas = document.getElementById('piechart');
-	var ctx = canvas.getContext('2d');
+	var radius = 100;
+	var opacity = 1;
+	var style = window.getComputedStyle(canvas, null);
+	var centerx = style.getPropertyValue('width').replace("px", "")/2;
+	var centery = style.getPropertyValue('height').replace("px", "")/2;
 	var arcPlace = 0;
 	var sections = [
 		{arc: 0.2, text: "10% forum upvotes"},
@@ -10,11 +14,8 @@ function draw() {
 		{arc: 0.3, text: "15% group assignments"},
 		{arc: 0.5, text: "25% watching lectures"},
 		];
-	var radius = 100;
-	var opacity = 1;
-	var centerx = 550/2;
-	var centery = 275/2;
-	
+	var ctx = canvas.getContext('2d');
+
 	function drawSection(color, linex, liney, textx, texty, startRadians, endRadians, text) {
 		ctx.fillStyle = color;
 		ctx.beginPath();
@@ -51,18 +52,18 @@ function draw() {
   		ctx.fillText(text, textx, texty);
 	}		
 
-	for(i=0; i<sections.length; i++) {
+	sections.forEach(function(object, number) {
 		var color = "rgba(59,44,96," + opacity.toString() + ")";
 		var linex = centerx + Math.cos(arcPlace*Math.PI) *  radius;
 		var liney = centery + Math.sin(arcPlace*Math.PI) *  radius;
-		var average = arcPlace+(sections[i].arc/2)
+		var average = arcPlace+(object.arc/2)
 		var textx = centerx + Math.cos(average*Math.PI) *  radius;
 		var texty = centery + Math.sin(average*Math.PI) *  radius;
 		var start = arcPlace
-		var end = arcPlace+= sections[i].arc;
-		drawSection(color, linex, liney, textx, texty, start, end, sections[i].text);
+		var end = arcPlace += object.arc;
+		drawSection(color, linex, liney, textx, texty, start, end, object.text);
 		opacity -= 0.199;
-	}
+	});
 
 	ctx.beginPath();
 	ctx.fillStyle = "rgba(0,0,0,1)";

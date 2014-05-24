@@ -277,8 +277,8 @@ nav ul ul li a:hover, nav ul ul li .onpage, nav ul ul li .onpage:visited  {
 
 /* Main Content Styles */
 #content {
-  max-width: 900px;
-  margin-left: 210px;
+  max-width: 910px;
+  margin-left: 220px;
 	padding: 15px;
   padding-left: 20px;
 	overflow: hidden;
