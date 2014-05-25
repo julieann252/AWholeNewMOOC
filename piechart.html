@@ -25,6 +25,18 @@
 	<script src="http://julieanncampbell.com/js/modernizr.js"></script>
 	<script src="nav.js"></script>
 	<script src="piechart.js"></script>
+	<script>
+	$(document).ready(function() {
+		draw('piechart', 100,  [ 
+			{arc: 0.2, text: "forum upvotes"},
+			{arc: 0.4, text: "quiz grades"},
+			{arc: 0.3, text: "forum posts"},
+			{arc: 0.3, text: "indv. assignments"},
+			{arc: 0.3, text: "group assignments"},
+			{arc: 0.5, text: "watching lectures"},
+			], '59,44,96');
+	});
+	</script>
 	<!-- End Scripts -->
 </head>
 <body>
