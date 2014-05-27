@@ -37,6 +37,22 @@ margin-left: 30px;
 vertical-align: -50%;
 padding-right: 5px;
 }
+
+table.board {
+border: 1px solid #3b2c60;
+width: 450px;
+line-height: 1.5em;
+overflow: hidden;
+}
+
+table.board td {
+padding: 8px;
+}
+
+table span {
+width: 100px;
+float: right;
+}
 </style>
 <!-- End Styles -->
 
@@ -170,6 +186,7 @@ $(document).ready(function() {
 <!--->End Nav</!--->
 
 <div id="content">
+<h1>Course X</h1>
 <h2>Visualize Your Course Progress</h2>
 <p><a href="">Track 3</a> > <a href="">Week 3</a> > <a href="">Assignments</a></p>
 <br>
@@ -186,6 +203,7 @@ $(document).ready(function() {
 </p>
 <p>	
 <img src="user3.png"> <a href="">Group 3</a> - 250 points
+
 </p>
 </div>
 <div class="member">
@@ -210,7 +228,6 @@ $(document).ready(function() {
 <li>4 points: Watched all of <a href="">week 3's lecture videos</a></li>
 </ul>
 </div>
-
 <div class="block">
 <div class="boxhead">
 	<h2>Where are my points coming from?</h2>
@@ -224,8 +241,6 @@ $(document).ready(function() {
 <p class="boxbody">Your group headquarters has been upgraded to level 3! With 80 more points, you can upgrade to level 4. </p>
 <button>Preview Level 4 features.</button>
 </div>
-
 </div>
-
 </body>
 </html>
