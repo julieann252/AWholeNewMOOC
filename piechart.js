@@ -51,7 +51,7 @@ draw = function(element, radius, sections, rgb) {
 	}
 
 	sections.forEach(function(object) {
-		var color = "rgba(" + rgb + "," + opacity.toString() + ")";
+		var color = "rgba(" + rgb + "," + String(opacity) + ")";
 		var linex = centerx + Math.cos(arcPlace*Math.PI) *  radius;
 		var liney = centery + Math.sin(arcPlace*Math.PI) *  radius;
 		var average = arcPlace+(object.arc/2)

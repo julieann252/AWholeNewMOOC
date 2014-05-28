@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-<title>A Whole New MOOC</title>
+<title>A Whole New MOOC: Course Progress</title>
 
 <!-- Begin Meta -->
 <meta charset="utf-8" />
@@ -11,236 +11,220 @@
 <!-- Begin Styles -->
 <link href="MOOCstyle.css" rel="stylesheet" type="text/css" media="all" />
 <style>
-		.block {
-border-top: 1px dotted #3b2c60;
-border-right: 1px dotted #3b2c60;
-border-left: 1px dotted #3b2c60;
-padding: 20px;
- float: left;
- 	width: 450px;
-}
-.block:nth-of-type(2) {
-clear: right;
-margin-left: 30px;
-}
+	.column {
+		width: 455px;
+		float: left;
+		overflow: hidden;
+	}
+
+	.block {
+		width: 420px;
+		overflow: hidden;
+		padding-bottom: 35px;
+	}
+
+	.box {
+		width: 420px;
+		margin-bottom: 35px;
+		float: right;
+	}
+
+	.member img {
+	  vertical-align: -50%;
+	  padding-right: 5px;
+	}
 
 	.member {
-float: left;
-}
+	  float: left;
+	}
 
-.member:nth-of-type(2) {
-clear: right;
-margin-left: 30px;
-}
+	.member:nth-of-type(2) {
+	  clear: right;
+	  margin-left: 30px;
+	}
 
-.member img {
-vertical-align: -50%;
-padding-right: 5px;
-}
+	.box h2 {
+		margin-bottom: 0px;
+	}
 
-table.board {
-border: 1px solid #3b2c60;
-width: 450px;
-line-height: 1.5em;
-overflow: hidden;
-}
+	img {
+		margin-bottom: 5px;
+	}	
 
-table.board td {
-padding: 8px;
-}
+	button {
+		margin-top: 15px;
+ 	}
 
-table span {
-width: 100px;
-float: right;
-}
+ 	#chartblock {
+ 		clear:both;
+ 		width: 570px;
+ 	}
 </style>
 <!-- End Styles -->
 
 <!-- Begin Scripts -->
 <script src="http://julieanncampbell.com/js/jquery-1.11.0.min.js"></script>
 <script src="http://julieanncampbell.com/js/modernizr.js"></script>
-	<script src="piechart.js"></script>
+<script src="nav.js"></script>
+<script src="piechart.js"></script>
 <script>
-$(document).ready(function() {
-draw('piechart', 100, [
-{arc: 0.2, text: "forum upvotes"},
-{arc: 0.4, text: "quiz grades"},
-{arc: 0.3, text: "forum posts"},
-{arc: 0.3, text: "indv. assignments"},
-{arc: 0.3, text: "group assignments"},
-{arc: 0.5, text: "watching lectures"},
-], '59,44,96');
-});
+	$(document).ready(function() {
+	draw('piechart', 100, [
+		{arc: 0.2, text: "forum upvotes"},
+		{arc: 0.4, text: "quiz grades"},
+		{arc: 0.3, text: "forum posts"},
+		{arc: 0.3, text: "indv. assignments"},
+		{arc: 0.3, text: "group assignments"},
+		{arc: 0.5, text: "watching lectures"},
+		], '59,44,96');
+	});
 </script>
-<script>
-$(document).ready(function() {
-});
-    </script>
 <!-- End Scripts -->
 </head>
 <body>
-<!--->Begin Nav</!--->
 <nav>
-<h2>MO<span>OC</span></h2>
-<ul id="menu">
-<li><a href="">Course Home</a></li>
-<li><a href="">Syllabus</a></li>
-<li><a href="">Gradebook</a></li>
-<li><a href="">F.A.Q.</a></li>
-<li><a href="">Discussion Forums</a></li>
-<li><a href="">Groups</a></li>
-<li><a href="">Resources</a></li>
-<li>
-<a href="" class="submenu">Week 1</a>
-<ul>
-<li><a href="">Lecture</a></li>
-<li><a href="">Quiz</a></li>
-<li><a href="">Assignment</a></li>
-<li><a href="">Readings</a></li>
-</ul>
-</li>
-<li>
-<a href="" class="submenu">Week 2</a>
-<ul>
-<li><a href="">Lecture</a></li>
-<li><a href="">Quiz</a></li>
-<li><a href="">Assignment</a></li>
-<li><a href="">Readings</a></li>
-</ul>
-</li>
-<li>
-<a href="" class="submenu">Week 3</a>
-<ul>
-<li><a href="">Lecture</a></li>
-<li><a href="">Quiz</a></li>
-<li><a href="">Assignment</a></li>
-<li><a href="">Readings</a></li>
-</ul>
-</li>
-<li>
-<a href="" class="submenu">Week 4</a>
-<ul>
-<li><a href="">Lecture</a></li>
-<li><a href="">Quiz</a></li>
-<li><a href="">Assignment</a></li>
-<li><a href="">Readings</a></li>
-</ul>
-</li>
-<li>
-<a href="" class="submenu">Week 5</a>
-<ul>
-<li><a href="">Lecture</a></li>
-<li><a href="">Quiz</a></li>
-<li><a href="">Assignment</a></li>
-<li><a href="">Readings</a></li>
-</ul>
-</li>
-<li>
-<a href="" class="submenu">Week 6</a>
-<ul>
-<li><a href="">Lecture</a></li>
-<li><a href="">Quiz</a></li>
-<li><a href="">Assignment</a></li>
-<li><a href="">Readings</a></li>
-</ul>
-</li>
-<li>
-<a href="" class="submenu">Week 7</a>
-<ul>
-<li><a href="">Lecture</a></li>
-<li><a href="">Quiz</a></li>
-<li><a href="">Assignment</a></li>
-<li><a href="">Readings</a></li>
-</ul>
-</li>
-<li>
-<a href="" class="submenu">Week 8</a>
-<ul>
-<li><a href="">Lecture</a></li>
-<li><a href="">Quiz</a></li>
-<li><a href="">Assignment</a></li>
-<li><a href="">Readings</a></li>
-</ul>
-</li>
-<li>
-<a href="" class="submenu">Week 9</a>
-<ul>
-<li><a href="">Lecture</a></li>
-<li><a href="">Quiz</a></li>
-<li><a href="">Assignment</a></li>
-<li><a href="">Readings</a></li>
-</ul>
-</li>
-<li>
-<a href="" class="submenu">Week 10</a>
-<ul>
-<li><a href="">Lecture</a></li>
-<li><a href="">Quiz</a></li>
-<li><a href="">Assignment</a></li>
-<li><a href="">Readings</a></li>
-</ul>
-</li>
-<li><a href="">Report a Bug</a></li>
-</ul>
+	<h2>MO<span>OC</span></h2>
+	<ul id="menu">
+		<li><a href="studentdashboard.html">Course Home</a></li>
+		<li><a href="">Syllabus</a></li>
+		<li><a href="grouphome.html">Groups</a></li>
+		<li><a href="discussionboard.html">Discussion Forums</a></li>
+		<li><a href="">Gradebook</a></li>
+		<li>
+			<a href="" class="submenu">Week 1</a>
+			<ul>
+				<li><a href="videolecture.html">Lecture</a></li>
+				<li><a href="quiz.html">Quiz</a></li>
+				<li><a href="">Assignment</a></li>
+				<li><a href="">Readings</a></li>
+			</ul>
+		</li>
+		<li>
+			<a href="" class="submenu">Week 2</a>
+			<ul>
+				<li><a href="videolecture.html">Lecture</a></li>
+				<li><a href="quiz.html">Quiz</a></li>
+				<li><a href="">Assignment</a></li>
+				<li><a href="">Readings</a></li>
+			</ul>
+		</li>
+		<li>
+			<a href="" class="submenu">Week 3</a>
+			<ul>
+				<li><a href="videolecture.html">Lecture</a></li>
+				<li><a href="quiz.html">Quiz</a></li>
+				<li><a href="">Assignment</a></li>
+				<li><a href="">Readings</a></li>
+			</ul>
+		</li>
+		<li>
+			<a href="" class="submenu">Week 4</a>
+			<ul>
+				<li><a href="videolecture.html">Lecture</a></li>
+				<li><a href="quiz.html">Quiz</a></li>
+				<li><a href="">Assignment</a></li>
+				<li><a href="">Readings</a></li>
+			</ul>
+		</li>
+		<li>
+			<a href="" class="submenu">Week 5</a>
+			<ul>
+				<li><a href="videolecture.html">Lecture</a></li>
+				<li><a href="quiz.html">Quiz</a></li>
+				<li><a href="">Assignment</a></li>
+				<li><a href="">Readings</a></li>
+			</ul>
+		</li>
+		<li>
+			<a href="" class="submenu">Week 6</a>
+			<ul>
+				<li><a href="videolecture.html">Lecture</a></li>
+				<li><a href="quiz.html">Quiz</a></li>
+				<li><a href="">Assignment</a></li>
+				<li><a href="">Readings</a></li>
+			</ul>
+		</li>
+		<li>
+			<a href="" class="submenu">Week 7</a>
+			<ul>
+				<li><a href="videolecture.html">Lecture</a></li>
+				<li><a href="quiz.html">Quiz</a></li>
+				<li><a href="">Assignment</a></li>
+				<li><a href="">Readings</a></li>
+			</ul>
+		</li>
+		<li>
+			<a href="" class="submenu">Week 8</a>
+			<ul>
+				<li><a href="videolecture.html">Lecture</a></li>
+				<li><a href="quiz.html">Quiz</a></li>
+				<li><a href="">Assignment</a></li>
+				<li><a href="">Readings</a></li>
+			</ul>
+		</li>
+		<li>
+			<a href="" class="submenu">Week 9</a>
+			<ul>
+				<li><a href="videolecture.html">Lecture</a></li>
+				<li><a href="quiz.html">Quiz</a></li>
+				<li><a href="">Assignment</a></li>
+				<li><a href="">Readings</a></li>
+			</ul>
+		</li>
+		<li>
+			<a href="" class="submenu">Week 10</a>
+			<ul>
+				<li><a href="videolecture.html">Lecture</a></li>
+				<li><a href="quiz.html">Quiz</a></li>
+				<li><a href="">Assignment</a></li>
+				<li><a href="">Readings</a></li>
+			</ul>
+		</li>
+	</ul>
+	<p><img src="bug.png"><a href="">Report a Bug</a></p>
 </nav>
-<!--->End Nav</!--->
-
 <div id="content">
-<h1>Course X</h1>
-<h2>Visualize Your Course Progress</h2>
-<p><a href="">Track 3</a> > <a href="">Week 3</a> > <a href="">Assignments</a></p>
-<br>
-<h1>Group Leaderboard</h1>
-<div class="block">
-<div class="boxhead">
-<h2>Top Groups</h2></div>
-<div class="member">
-<p>
-<img src="user1.png"> <a href="">Group 1</a> - 260 points
-</p>
-<p>	
-<img src="user2.png"> <a href="">Group 2</a> - 254 points
-</p>
-<p>	
-<img src="user3.png"> <a href="">Group 3</a> - 250 points
-
-</p>
-</div>
-<div class="member">
-<p>	
-<img src="user4.png"> <a href="">Your Group</a> - 241 points
-</p>
-<p>	
-<img src="user5.png"> <a href="">Group 5</a> - 237 points
-</p>
-<p>	
-<img src="user6.png"> <a href="">Group 6</a> - 230 points
-</p>
-</div></div>
-	<div class="block">
-<div class="boxhead">
-<h2>Your Recent Activity</h2>
-</div>
-<ul>
-<li>5 points: Received 10 upvotes on your <a href="">response</a> to <a href="discussionboard.html">this post</a></li>
-<li>8 points: Received a 8/10 on the <a href="">week 3 quiz</a></li>
-<li>5 points: Wrote a response to <a href="">this post</a> in the <a href="discussionboard.html">week 3 assignment</a> forum</li>
-<li>4 points: Watched all of <a href="">week 3's lecture videos</a></li>
-</ul>
-</div>
-<div class="block">
-<div class="boxhead">
-	<h2>Where are my points coming from?</h2>
-<canvas id="piechart" width="440" height="275"></canvas>
-</div></div>
-<div class="block">
-<div class="boxhead">
-<h2>Visualize Your Group's Progress</h2>
-</div>
-<img src="universitysmall.jpg" style="padding: 10px;">
-<p class="boxbody">Your group headquarters has been upgraded to level 3! With 80 more points, you can upgrade to level 4. </p>
-<button>Preview Level 4 features.</button>
-</div>
+	<h1>Your Course Progress</h1>
+	<div class="column">
+		<div class="block">
+			<h2>Group Leaderboard</h2>
+			<div class="member">
+				<p><img src="user1.png"> <a href="">Group 1:</a> 260 points</p>
+				<p><img src="user2.png"> <a href="">Group 2:</a> 254 points</p>
+				<p><img src="user3.png"> <a href="">Group 3:</a> 250 points</p>
+			</div>
+			<div class="member">
+				<p><img src="user4.png"> <a href=""><b>My Group:</b></a> 241 points</p>
+				<p><img src="user5.png"> <a href="">Group 5:</a> 237 points</p>
+				<p><img src="user6.png"> <a href="">Group 6:</a> 230 points</p>
+			</div>
+		</div>
+		<div class="block">
+			<h2>Your Recent Activity</h2>
+			<ul>
+				<li>5 points: Received 10 upvotes on your <a href="">response</a> to <a href="discussionboard.html">this post</a></li>
+				<li>8 points: Received a 8/10 on the <a href="">week 3 quiz</a></li>
+				<li>5 points: Wrote a response to <a href="">this post</a> in the <a href="discussionboard.html">week 3 assignment</a> forum</li>
+				<li>4 points: Watched all of <a href="">week 3's lecture videos</a></li>
+			</ul>
+		</div>
+	</div>
+	<div class="column">
+		<div class="box">
+			<div class="boxhead">
+				<h2>Visualize Your Group's Progress</h2>
+			</div>
+			<div class="boxbody">
+				<img src="universitysmall.png">
+				<p>Your group headquarters has been upgraded to level 3! With 80 more points, you can upgrade to level 4.</p>
+				<button class="button">Preview Level 4</button>
+			</div>
+		</div>
+	</div>
+	<div id="chartblock">
+		<h2>Where are my points coming from?</h2>
+		<canvas id="piechart" width="550" height="275"></canvas>
+	</div>
 </div>
 </body>
 </html>

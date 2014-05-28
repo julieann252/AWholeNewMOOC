@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-<title>A Whole New MOOC</title>
+<title>A Whole New MOOC: Discussion Forum</title>
 
 <!-- Begin Meta -->
 <meta charset="utf-8" />
@@ -11,46 +11,100 @@
 <!-- Begin Styles -->
 <link href="MOOCstyle.css" rel="stylesheet" type="text/css" media="all" />
 <style>
-	button {
-margin-top: 15px;
-}
 
-	table.board {
-border: 1px solid #3b2c60;
-width: 660px;
-line-height: 1.5em;
-overflow: hidden;
-}
+  .board {
+    border: 1px solid #3b2c60;
+    line-height: 1.5em;
+    overflow: hidden;
+  }
 
-table.board td {
-padding: 8px;
-}
+  .board td {
+    padding: 8px;
+    width: 660px;
+  }
 
-table span {
-width: 100px;
-float: right;
-}
+  .block {
+    margin-top: 15px;
+    padding: 10px;
+    background-color: #3b2c60;
+    width: 658px;
+    color: #FFFFFF;
+    overflow:hidden;
+  }
 
-.member {
-float: left;
-}
+  .block h3{
+    float:left;
+    padding-right: 10px;
+    padding-top: 5px;
+  }
 
-.member:nth-of-type(2) {
-clear: right;
-margin-left: 30px;
-}
+  #checkboxes {
+    float: left;
+    padding-top: 5px;
+    line-height: 1.1em;
+  }
 
-.block img {
-vertical-align: -50%;
-padding-right: 5px;
-}
+  input[type=checkbox] {
+    margin-top: -2px;
+    height: 12px;
+    width: 12px;
+  }
+
+  label {
+    display: inline-block;
+    padding-right: 6px;
+  }
+
+  table span.datetime {
+    width: 100px;
+    float: right;
+  }
+
+  table span.upvotes {
+    display: inline-block;
+    width: 660px;
+  }
+
+  table span.upvotes span {
+    display: inline-block;
+    border-radius: 10px;
+    font-size: 0.9em;
+    padding-left: 5px;
+    padding-right: 5px;
+    margin-right: 5px;
+    margin-top: 5px;
+    margin-bottom: 5px;
+  }
+
+  tr:nth-child(odd) span.upvotes span {
+    background-color: #e4e3fc;
+  }
+
+  tr:nth-child(even) span.upvotes span {
+    background-color: #FFFFFF;
+  }
+
+  table img {
+    float:left; 
+    padding-right: 5px;
+  }
+
+  .buttons {
+    margin-top: 15px;
+    width: 678px;
+    overflow: hidden;
+  }
+
+  button:last-of-type {
+    float: right;
+  }
 </style>
 <!-- End Styles -->
 
 <!-- Begin Scripts -->
 <script src="http://julieanncampbell.com/js/jquery-1.11.0.min.js"></script>
 <script src="http://julieanncampbell.com/js/modernizr.js"></script>
-<script src="http://julieanncampbell.com/js/nav.js"></script>
+<script src="nav.js"></script>
 <script>
 $(document).ready(function() {
 });
@@ -58,190 +112,191 @@ $(document).ready(function() {
 <!-- End Scripts -->
 </head>
 <body>
-<!--->Begin Nav</!--->
 <nav>
-<h2>MO<span>OC</span></h2>
-<ul id="menu">
-<li><a href="">Course Home</a></li>
-<li><a href="">Syllabus</a></li>
-<li><a href="">Gradebook</a></li>
-<li><a href="">F.A.Q.</a></li>
-<li><a href="">Discussion Forums</a></li>
-<li><a href="">Groups</a></li>
-<li><a href="">Resources</a></li>
-<li>
-<a href="" class="submenu">Week 1</a>
-<ul>
-<li><a href="">Lecture</a></li>
-<li><a href="">Quiz</a></li>
-<li><a href="">Assignment</a></li>
-<li><a href="">Readings</a></li>
-</ul>
-</li>
-<li>
-<a href="" class="submenu">Week 2</a>
-<ul>
-<li><a href="">Lecture</a></li>
-<li><a href="">Quiz</a></li>
-<li><a href="">Assignment</a></li>
-<li><a href="">Readings</a></li>
-</ul>
-</li>
-<li>
-<a href="" class="submenu">Week 3</a>
-<ul>
-<li><a href="">Lecture</a></li>
-<li><a href="">Quiz</a></li>
-<li><a href="">Assignment</a></li>
-<li><a href="">Readings</a></li>
-</ul>
-</li>
-<li>
-<a href="" class="submenu">Week 4</a>
-<ul>
-<li><a href="">Lecture</a></li>
-<li><a href="">Quiz</a></li>
-<li><a href="">Assignment</a></li>
-<li><a href="">Readings</a></li>
-</ul>
-</li>
-<li>
-<a href="" class="submenu">Week 5</a>
-<ul>
-<li><a href="">Lecture</a></li>
-<li><a href="">Quiz</a></li>
-<li><a href="">Assignment</a></li>
-<li><a href="">Readings</a></li>
-</ul>
-</li>
-<li>
-<a href="" class="submenu">Week 6</a>
-<ul>
-<li><a href="">Lecture</a></li>
-<li><a href="">Quiz</a></li>
-<li><a href="">Assignment</a></li>
-<li><a href="">Readings</a></li>
-</ul>
-</li>
-<li>
-<a href="" class="submenu">Week 7</a>
-<ul>
-<li><a href="">Lecture</a></li>
-<li><a href="">Quiz</a></li>
-<li><a href="">Assignment</a></li>
-<li><a href="">Readings</a></li>
-</ul>
-</li>
-<li>
-<a href="" class="submenu">Week 8</a>
-<ul>
-<li><a href="">Lecture</a></li>
-<li><a href="">Quiz</a></li>
-<li><a href="">Assignment</a></li>
-<li><a href="">Readings</a></li>
-</ul>
-</li>
-<li>
-<a href="" class="submenu">Week 9</a>
-<ul>
-<li><a href="">Lecture</a></li>
-<li><a href="">Quiz</a></li>
-<li><a href="">Assignment</a></li>
-<li><a href="">Readings</a></li>
-</ul>
-</li>
-<li>
-<a href="" class="submenu">Week 10</a>
-<ul>
-<li><a href="">Lecture</a></li>
-<li><a href="">Quiz</a></li>
-<li><a href="">Assignment</a></li>
-<li><a href="">Readings</a></li>
-</ul>
-</li>
-<li><a href="">Report a Bug</a></li>
-</ul>
+  <h2>MO<span>OC</span></h2>
+  <ul id="menu">
+    <li><a href="studentdashboard.html">Course Home</a></li>
+    <li><a href="">Syllabus</a></li>
+    <li><a href="grouphome.html">Groups</a></li>
+    <li><a href="discussionboard.html" class="onpage">Discussion Forums</a></li>
+    <li><a href="">Gradebook</a></li>
+    <li>
+      <a href="" class="submenu">Week 1</a>
+      <ul>
+        <li><a href="videolecture.html">Lecture</a></li>
+        <li><a href="quiz.html">Quiz</a></li>
+        <li><a href="">Assignment</a></li>
+        <li><a href="">Readings</a></li>
+      </ul>
+    </li>
+    <li>
+      <a href="" class="submenu">Week 2</a>
+      <ul>
+        <li><a href="videolecture.html">Lecture</a></li>
+        <li><a href="quiz.html">Quiz</a></li>
+        <li><a href="">Assignment</a></li>
+        <li><a href="">Readings</a></li>
+      </ul>
+    </li>
+    <li>
+      <a href="" class="submenu">Week 3</a>
+      <ul>
+        <li><a href="videolecture.html">Lecture</a></li>
+        <li><a href="quiz.html">Quiz</a></li>
+        <li><a href="">Assignment</a></li>
+        <li><a href="">Readings</a></li>
+      </ul>
+    </li>
+    <li>
+      <a href="" class="submenu">Week 4</a>
+      <ul>
+        <li><a href="videolecture.html">Lecture</a></li>
+        <li><a href="quiz.html">Quiz</a></li>
+        <li><a href="">Assignment</a></li>
+        <li><a href="">Readings</a></li>
+      </ul>
+    </li>
+    <li>
+      <a href="" class="submenu">Week 5</a>
+      <ul>
+        <li><a href="videolecture.html">Lecture</a></li>
+        <li><a href="quiz.html">Quiz</a></li>
+        <li><a href="">Assignment</a></li>
+        <li><a href="">Readings</a></li>
+      </ul>
+    </li>
+    <li>
+      <a href="" class="submenu">Week 6</a>
+      <ul>
+        <li><a href="videolecture.html">Lecture</a></li>
+        <li><a href="quiz.html">Quiz</a></li>
+        <li><a href="">Assignment</a></li>
+        <li><a href="">Readings</a></li>
+      </ul>
+    </li>
+    <li>
+      <a href="" class="submenu">Week 7</a>
+      <ul>
+        <li><a href="videolecture.html">Lecture</a></li>
+        <li><a href="quiz.html">Quiz</a></li>
+        <li><a href="">Assignment</a></li>
+        <li><a href="">Readings</a></li>
+      </ul>
+    </li>
+    <li>
+      <a href="" class="submenu">Week 8</a>
+      <ul>
+        <li><a href="videolecture.html">Lecture</a></li>
+        <li><a href="quiz.html">Quiz</a></li>
+        <li><a href="">Assignment</a></li>
+        <li><a href="">Readings</a></li>
+      </ul>
+    </li>
+    <li>
+      <a href="" class="submenu">Week 9</a>
+      <ul>
+        <li><a href="videolecture.html">Lecture</a></li>
+        <li><a href="quiz.html">Quiz</a></li>
+        <li><a href="">Assignment</a></li>
+        <li><a href="">Readings</a></li>
+      </ul>
+    </li>
+    <li>
+      <a href="" class="submenu">Week 10</a>
+      <ul>
+        <li><a href="videolecture.html">Lecture</a></li>
+        <li><a href="quiz.html">Quiz</a></li>
+        <li><a href="">Assignment</a></li>
+        <li><a href="">Readings</a></li>
+      </ul>
+    </li>
+  </ul>
+  <p><img src="bug.png"><a href="">Report a Bug</a></p>
 </nav>
-<!--->End Nav</!--->
-
 <div id="content">
-<h1>A Whole New MOOC</h1>
-<h2>Heading 2</h2>
-<p><a href="">Track 3</a> > <a href="">Week 3</a> > <a href="">Assignments</a></p>
-<br>
-<h3>Filter by:</h3>
-<div id="Checkboxes">
-  <input type="checkbox" id="Checkbox1">
-  <label for="Checkbox1">Most upvotes</label>
-  <input type="checkbox" id="Checkbox2">
-  <label for="Checkbox2">Response from course staff</label>
-  <input type="checkbox" id="Checkbox3">
-  <label for="Checkbox3">Most responses</label>
-  <input type="checkbox" id="Checkbox4">
-  <label for="Checkbox4">Most views</label>
-  <input type="checkbox" id="Checkbox5">
-  <label for="Checkbox5">Newest</label>
-</div>
-<<<<<<< HEAD
-		<br>
-	<div class="block">
-    <div id="blockhead">
-  <h3>Discussion Board</h3></div>
+  <h1>Discussion Forum</h1>
+
+  <p><a href="">Track 3</a> > <a href="">Week 3</a> > <a href="">Assignments</a></p>
+  <div class="block">
+    <h3>Filter by:</h3>
+    <div id="checkboxes">
+      <input type="checkbox" id="upvotes">
+      <label for="Checkbox1">Most upvotes</label>
+      <input type="checkbox" id="staff">
+      <label for="Checkbox2">Staff response</label>
+      <input type="checkbox" id="mostResponses">
+      <label for="Checkbox3">Most responses</label>
+      <input type="checkbox" id="mostViews">
+      <label for="Checkbox4">Most views</label>
+      <input type="checkbox" id="new">
+      <label for="Checkbox5">Newest</label>
+    </div>
+  </div>
   <table class="board">
-<tr>
-<td><img src="coursestaff.png" style="float:left; padding-right:10 px"> 
-<a href="">Error on the week 3 assignment</a> <br> Posted by Username on Date: X/X/XX at Time: XX:XX<br/># Upvotes # Views # Responses
-</td>
-</tr>
-<tr>
-<td><img src="coursestaff.png" style="float:left; padding-right:20 px"> 
-<a href="">How do you solve question 3?</a> <br> Posted by Username on Date: X/X/XX at Time: XX:XX<br/># Upvotes # Views # Responses
-</td>
-</tr>
-<tr>
-<td><img src="topstudent.png" style="padding-right:10 px"> 
-<a href="">Confused by question 7</a> <br> Posted by Username on Date: X/X/XX at Time: XX:XX<br/># Upvotes # Views # Responses
-</td>
-</tr>
-<tr>
-<td>
-<<<<<<< HEAD
-<a href="">Does my answer for #5 make sense?</a> <br> Posted by Username on Date: X/X/XX at Time: XX:XX<br/># Upvotes # Views # Responses
-=======
-<a href="">Does my answer for #5 make sense?</a> <span>Date: X/X/XX</span><br />
-<span>Insert Icon <span>  Posted by Username <span>Time: XX:XX<span>
-<span># Upvotes <span><span> # Views <span><span># Responses<span>
->>>>>>> 8e94ab1b074cb0e1baaddc44b3c04968ef686d38
-
-</td>
-</tr>
-<tr>
-<td>
-<a href="">What am I doing wrong?</a> <br> Posted by Username on Date: X/X/XX at Time: XX:XX<br/># Upvotes # Views # Responses
-</td>
-</tr>
-<tr>
-<td>
-<a href="">Still don't get questions 3, 6, and 7</a> <br> Posted by Username on Date: X/X/XX at Time: XX:XX<br/># Upvotes # Views # Responses
-</td>
-</tr>
-<tr>
-<td>
-<a href="">Questions 6 and 7 - HELP!</a> <br> Posted by Username on Date: X/X/XX at Time: XX:XX<br/># Upvotes # Views # Responses
-</td>
-</tr>
-<tr>
-<td>
-<a href="">What's the answer to question 6?</a><br> Posted by Username on Date: X/X/XX at Time: XX:XX<br/># Upvotes # Views # Responses
-</td>
-</tr>
-</table>
-<button class="button">New Post</button>
-<button class="button">View Next Page</button>
-<button class="button">View Week 3 Board</button>
-
-<button class="button">View Track 3 Board</button>
-</div>
+    <tr>
+      <td>
+        <img src="coursestaff.png"> 
+        <a href="">Error on the week 3 assignment</a><span class="datetime">Date: X/X/XX</span><br />
+        Posted by Username <span class="datetime">Time: XX:XX</span>
+        <span class="upvotes"><span># Upvotes</span> <span># Views</span> <span># Responses</span></span>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <img src="coursestaff.png"> 
+        <a href="">How do you solve question 3?</a><span class="datetime">Date: X/X/XX</span><br />
+        Posted by Username <span class="datetime">Time: XX:XX</span>
+        <span class="upvotes"><span># Upvotes</span> <span># Views</span> <span># Responses</span></span>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <img src="topstudent.png"> 
+        <a href="">Confused by question 7</a><span class="datetime">Date: X/X/XX</span><br />
+        Posted by Username <span class="datetime">Time: XX:XX</span>
+        <span class="upvotes"><span># Upvotes</span> <span># Views</span> <span># Responses</span></span>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <a href="">Does my answer for #5 make sense?</a><span class="datetime">Date: X/X/XX</span><br />
+        Posted by Username <span class="datetime">Time: XX:XX</span>
+        <span class="upvotes"><span># Upvotes</span> <span># Views</span> <span># Responses</span></span>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <a href="">What am I doing wrong?</a><span class="datetime">Date: X/X/XX</span><br />
+        Posted by Username <span class="datetime">Time: XX:XX</span>
+        <span class="upvotes"><span># Upvotes</span> <span># Views</span> <span># Responses</span></span>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <a href="">Still don't get questions 3, 6, and 7</a><span class="datetime">Date: X/X/XX</span><br />
+        Posted by Username <span class="datetime">Time: XX:XX</span>
+        <span class="upvotes"><span># Upvotes</span> <span># Views</span> <span># Responses</span></span>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <a href="">Questions 6 and 7 - HELP!</a><span class="datetime">Date: X/X/XX</span><br />
+        Posted by Username <span class="datetime">Time: XX:XX</span>
+        <span class="upvotes"><span># Upvotes</span> <span># Views</span> <span># Responses</span></span>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <a href="">What's the answer to question 6?</a><span class="datetime">Date: X/X/XX</span><br />
+        Posted by Username <span class="datetime">Time: XX:XX</span>
+        <span class="upvotes"><span># Upvotes</span> <span># Views</span> <span># Responses</span></span>
+      </td>
+    </tr>
+  </table>
+  <div class="buttons">
+    <button class="button">New Post</button>
+    <button class="button">Main Board</button>
+  </div>
 </div>
 </body>
 </html>
