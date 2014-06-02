@@ -11,7 +11,7 @@
 <!-- Begin Styles -->
 <link href="MOOCstyle.css" rel="stylesheet" type="text/css" media="all" />
 <style>
-  #content h2, #video, .block {
+  #content h2, div.video, .block {
     margin-top: 15px;
   }
 
@@ -35,6 +35,64 @@
   button:last-of-type {
     float: right;
   }
+
+  #notes {
+    margin-top: 30px;
+    display: none;
+  }
+
+  div.video {
+    position: relative;
+    height: 375px;
+    width: 600px;
+  }
+
+  img.arrow, #notebox {
+    position: absolute;
+  }
+
+  img.arrow:nth-of-type(2) {
+    bottom: 0px;
+    left: 95px;
+  }
+
+  img.arrow:nth-of-type(3) {
+    bottom: 0px;
+    left: 150px;
+  }
+
+  img.arrow:nth-of-type(4) {
+    bottom: 0px;
+    left: 250px;
+  }
+
+  img.arrow:nth-of-type(5) {
+    display: none;
+    bottom: 0px;
+    left: 313px;
+  }
+
+  #notebox {
+    height: 200px;
+    width: 250px;
+    top: 75px;
+    left: 170px;
+    border: 1px solid #3b2c60;
+    padding: 10px;
+    background: #FFFFFF;
+    display: none;
+  }
+
+  textarea {
+    height: 130px;
+    width: 250px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+  }
+
+  #lastrow {
+    display: none;
+  }
 </style>
 
 <!-- Begin Scripts -->
@@ -43,6 +101,22 @@
 <script src="nav.js"></script>
 <script>
 $(document).ready(function() {
+  $('#view').click(function() {
+    $('#notes').show();
+    setnav();
+    var scrollPosition = $(window).scrollTop();
+    $(window).scrollTop(scrollPosition + 550);
+  })
+  $('#add').click(function() {
+    $('#notebox').show();
+  });
+  $('#submitnote').click(function() {
+    var text = $('textarea').val();
+    $('#notebox').hide();
+    $('#lastrow, img.arrow:nth-of-type(5)').show();
+    $('#lastrow span').html(text);
+  });
+
 });
     </script>
 <!-- End Scripts -->
@@ -154,23 +228,32 @@ $(document).ready(function() {
   <p><a href="">Home</a> > <a href="">Week 3</a> > <a href="">Lecture Videos</a></p>
   <h2>This Week's Lectures</h2>
   <ul>
-    <li>Lecture 3.1: Paper Prototypes and Mockups (12:47)</li>
+    <li>Lecture 3.1: Paper Prototypes and Mockups (18:47)</li>
     <li>Lecture 3.2: Faking it - Wizard of Oz Prototyping (14:30)</li>
     <li>Lecture 3.3: Faking it - Video Prototyping (11:48)</li>
     <li>Lecture 3.4: Creating and Comparing Alternative Prototypes (8:55)</li>
   </ul>
-  <div id="video">
-    <img src="annotatedvideoplayer.jpg">
+  <div class="video">
+    <img src="videoplayer.png" class="video">
+    <img src="videoarrow.png" class="arrow">
+    <img src="videoarrow.png" class="arrow">
+    <img src="videoarrow.png" class="arrow">
+    <img src="videoarrow.png" class="arrow">
+    <div id="notebox">
+      <h3>11:03:</h3>
+      <textarea>Add a note...</textarea>
+      <button class="button" id="submitnote">Submit</button>
+    </div>
   </div>
   <div class="buttons">
-   <button class="button">Add Note</button>
-    <button class="button">View All Notes</button>
+    <button class="button" id="add">Add Note</button>
+    <button class="button" id="view">View Notes</button>
   </div>
-  <div class="block">
+  <div class="block" id="notes">
     <div id="boxhead">
-     <h3>Your Annotations</h3>
+     <h3>Your Notes</h3>
     </div>
-    <table class="board">
+    <table class="board" id="notelist">
       <tr>
         <td><a href="">1:23</a> Super insightful comment here with more commentary from lorem ipsum</td>
       </tr>
@@ -180,8 +263,8 @@ $(document).ready(function() {
       <tr>
         <td><a href="">7:41</a>  Super insightful comment here with more commentary from lorem ipsum</td>
       </tr>
-      <tr>
-        <td><a href="">11:03</a>  Super insightful comment here with more commentary from lorem ipsum</td>
+      <tr id="lastrow">
+        <td><a href="">11:03</a>  <span></span></td>
       </tr>
     </table>
   </div>
