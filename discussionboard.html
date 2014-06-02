@@ -44,7 +44,7 @@
     line-height: 1.1em;
   }
 
-  input[type=checkbox] {
+  input[type=radio] {
     margin-top: -2px;
     height: 12px;
     width: 12px;
@@ -56,7 +56,7 @@
   }
 
   table span.datetime {
-    width: 100px;
+    width: 125px;
     float: right;
   }
 
@@ -98,6 +98,10 @@
   button:last-of-type {
     float: right;
   }
+
+  #upvoteboard, #staffboard, #responsesboard, #viewsboard {
+    display: none;
+  }
 </style>
 <!-- End Styles -->
 
@@ -107,8 +111,29 @@
 <script src="nav.js"></script>
 <script>
 $(document).ready(function() {
+  $("input[type=radio]").click(function() {
+    $(".board").hide();
+    var currentId = $(this).attr("id");
+    switch (currentId) {
+      case "new":
+        $("#newboard").show();
+        break;
+      case "upvotes":
+        $("#upvoteboard").show();
+        break;
+      case "staff":
+        $("#staffboard").show();
+        break;
+      case "mostResponses":
+        $("#responsesboard").show();
+        break;
+      case "mostViews":
+        $("#viewsboard").show();
+        break;
+      }
+    }); 
 });
-    </script>
+</script>
 <!-- End Scripts -->
 </head>
 <body>
@@ -220,79 +245,330 @@ $(document).ready(function() {
   <div class="block">
     <h3>Filter by:</h3>
     <div id="checkboxes">
-      <input type="checkbox" id="upvotes">
-      <label for="Checkbox1">Most upvotes</label>
-      <input type="checkbox" id="staff">
-      <label for="Checkbox2">Staff response</label>
-      <input type="checkbox" id="mostResponses">
-      <label for="Checkbox3">Most responses</label>
-      <input type="checkbox" id="mostViews">
-      <label for="Checkbox4">Most views</label>
-      <input type="checkbox" id="new">
+      <input type="radio" name="filter" id="new" checked="checked">
       <label for="Checkbox5">Newest</label>
+      <input type="radio" name="filter" id="upvotes">
+      <label for="Checkbox1">Most upvotes</label>
+      <input type="radio" name="filter" id="staff">
+      <label for="Checkbox2">Staff response</label>
+      <input type="radio" name="filter" id="mostResponses">
+      <label for="Checkbox3">Most responses</label>
+      <input type="radio" name="filter" id="mostViews">
+      <label for="Checkbox4">Most views</label>
     </div>
   </div>
-  <table class="board">
+
+  <table class="board" id="newboard">
     <tr>
       <td>
-        <img src="coursestaff.png"> 
-        <a href="">Error on the week 3 assignment</a><span class="datetime">Date: X/X/XX</span><br />
-        Posted by Username <span class="datetime">Time: XX:XX</span>
-        <span class="upvotes"><span># Upvotes</span> <span># Views</span> <span># Responses</span></span>
+        <a href="">What's the answer to question 6?</a><span class="datetime">Date: 6/1/2014</span><br />
+        Posted by Username <span class="datetime">Time: 4:31 PM</span>
+        <span class="upvotes"><span>1 Upvotes</span> <span>27 Views</span> <span>3 Responses</span></span>
       </td>
     </tr>
     <tr>
       <td>
-        <img src="coursestaff.png"> 
-        <a href="">How do you solve question 3?</a><span class="datetime">Date: X/X/XX</span><br />
-        Posted by Username <span class="datetime">Time: XX:XX</span>
-        <span class="upvotes"><span># Upvotes</span> <span># Views</span> <span># Responses</span></span>
+        <a href="">Still don't get questions 3, 6, and 7</a><span class="datetime">Date: 6/1/2014</span><br />
+        Posted by Username <span class="datetime">Time: 1:15 PM</span>
+        <span class="upvotes"><span>4 Upvotes</span> <span>8 Views</span> <span>2 Responses</span></span>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <a href="">Questions 6 and 7 - HELP!</a><span class="datetime">Date: 5/31/2014</span><br />
+        Posted by Username <span class="datetime">Time: 11:54 AM</span>
+        <span class="upvotes"><span>0 Upvotes</span> <span>45 Views</span> <span>4 Responses</span></span>
       </td>
     </tr>
     <tr>
       <td>
         <img src="topstudent.png"> 
-        <a href="">Confused by question 7</a><span class="datetime">Date: X/X/XX</span><br />
-        Posted by Username <span class="datetime">Time: XX:XX</span>
-        <span class="upvotes"><span># Upvotes</span> <span># Views</span> <span># Responses</span></span>
+        <a href="">Confused by question 7</a><span class="datetime">Date: 5/30/2014</span><br />
+        Posted by Username <span class="datetime">Time: 7:26 PM</span>
+        <span class="upvotes"><span>17 Upvotes</span> <span>67 Views</span> <span>17 Responses</span></span>
       </td>
     </tr>
     <tr>
       <td>
-        <a href="">Does my answer for #5 make sense?</a><span class="datetime">Date: X/X/XX</span><br />
-        Posted by Username <span class="datetime">Time: XX:XX</span>
-        <span class="upvotes"><span># Upvotes</span> <span># Views</span> <span># Responses</span></span>
+        <img src="coursestaff.png"> 
+        <a href="">Error on the week 3 assignment</a><span class="datetime">Date: 5/28/2014</span><br />
+        Posted by Username <span class="datetime">Time: 12:45 PM</span>
+        <span class="upvotes"><span>15 Upvotes</span> <span>103 Views</span> <span>18 Responses</span></span>
       </td>
     </tr>
     <tr>
       <td>
-        <a href="">What am I doing wrong?</a><span class="datetime">Date: X/X/XX</span><br />
-        Posted by Username <span class="datetime">Time: XX:XX</span>
-        <span class="upvotes"><span># Upvotes</span> <span># Views</span> <span># Responses</span></span>
+        <a href="">What am I doing wrong?</a><span class="datetime">Date: 5/28/2014</span><br />
+        Posted by Username <span class="datetime">Time: 11:32 AM</span>
+        <span class="upvotes"><span>2 Upvotes</span> <span>24 Views</span> <span>7 Responses</span></span>
       </td>
     </tr>
     <tr>
       <td>
-        <a href="">Still don't get questions 3, 6, and 7</a><span class="datetime">Date: X/X/XX</span><br />
-        Posted by Username <span class="datetime">Time: XX:XX</span>
-        <span class="upvotes"><span># Upvotes</span> <span># Views</span> <span># Responses</span></span>
+        <img src="coursestaff.png"> 
+        <a href="">How do you solve question 3?</a><span class="datetime">Date: 5/27/2014</span><br />
+        Posted by Username <span class="datetime">Time: 8:15 AM</span>
+        <span class="upvotes"><span>14 Upvotes</span> <span>124 Views</span> <span>22 Responses</span></span>
       </td>
     </tr>
     <tr>
       <td>
-        <a href="">Questions 6 and 7 - HELP!</a><span class="datetime">Date: X/X/XX</span><br />
-        Posted by Username <span class="datetime">Time: XX:XX</span>
-        <span class="upvotes"><span># Upvotes</span> <span># Views</span> <span># Responses</span></span>
-      </td>
-    </tr>
-    <tr>
-      <td>
-        <a href="">What's the answer to question 6?</a><span class="datetime">Date: X/X/XX</span><br />
-        Posted by Username <span class="datetime">Time: XX:XX</span>
-        <span class="upvotes"><span># Upvotes</span> <span># Views</span> <span># Responses</span></span>
+        <a href="">Does my answer for #5 make sense?</a><span class="datetime">Date: 5/25/2014</span><br />
+        Posted by Username <span class="datetime">Time: 5:14 PM</span>
+        <span class="upvotes"><span>8 Upvotes</span> <span>48 Views</span> <span>19 Responses</span></span>
       </td>
     </tr>
   </table>
+
+<table class="board" id="upvoteboard">
+    <tr>
+      <td>
+        <img src="topstudent.png"> 
+        <a href="">Confused by question 7</a><span class="datetime">Date: 5/30/2014</span><br />
+        Posted by Username <span class="datetime">Time: 7:26 PM</span>
+        <span class="upvotes"><span>17 Upvotes</span> <span>67 Views</span> <span>17 Responses</span></span>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <img src="coursestaff.png"> 
+        <a href="">Error on the week 3 assignment</a><span class="datetime">Date: 5/28/2014</span><br />
+        Posted by Username <span class="datetime">Time: 12:45 PM</span>
+        <span class="upvotes"><span>15 Upvotes</span> <span>103 Views</span> <span>18 Responses</span></span>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <img src="coursestaff.png"> 
+        <a href="">How do you solve question 3?</a><span class="datetime">Date: 5/27/2014</span><br />
+        Posted by Username <span class="datetime">Time: 8:15 AM</span>
+        <span class="upvotes"><span>14 Upvotes</span> <span>124 Views</span> <span>22 Responses</span></span>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <a href="">Does my answer for #5 make sense?</a><span class="datetime">Date: 5/25/2014</span><br />
+        Posted by Username <span class="datetime">Time: 5:14 PM</span>
+        <span class="upvotes"><span>8 Upvotes</span> <span>48 Views</span> <span>19 Responses</span></span>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <a href="">Still don't get questions 3, 6, and 7</a><span class="datetime">Date: 6/1/2014</span><br />
+        Posted by Username <span class="datetime">Time: 1:15 PM</span>
+        <span class="upvotes"><span>4 Upvotes</span> <span>8 Views</span> <span>2 Responses</span></span>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <a href="">What am I doing wrong?</a><span class="datetime">Date: 5/28/2014</span><br />
+        Posted by Username <span class="datetime">Time: 11:32 AM</span>
+        <span class="upvotes"><span>2 Upvotes</span> <span>24 Views</span> <span>7 Responses</span></span>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <a href="">What's the answer to question 6?</a><span class="datetime">Date: 6/1/2014</span><br />
+        Posted by Username <span class="datetime">Time: 4:31 PM</span>
+        <span class="upvotes"><span>1 Upvotes</span> <span>27 Views</span> <span>3 Responses</span></span>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <a href="">Questions 6 and 7 - HELP!</a><span class="datetime">Date: 6/1/2014</span><br />
+        Posted by Username <span class="datetime">Time: 11:54 AM</span>
+        <span class="upvotes"><span>0 Upvotes</span> <span>45 Views</span> <span>4 Responses</span></span>
+      </td>
+    </tr>
+  </table>
+
+  <table class="board" id="staffboard">
+    <tr>
+      <td>
+        <img src="coursestaff.png"> 
+        <a href="">Error on the week 3 assignment</a><span class="datetime">Date: 5/28/2014</span><br />
+        Posted by Username <span class="datetime">Time: 12:45 PM</span>
+        <span class="upvotes"><span>15 Upvotes</span> <span>103 Views</span> <span>18 Responses</span></span>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <img src="coursestaff.png"> 
+        <a href="">How do you solve question 3?</a><span class="datetime">Date: 5/27/2014</span><br />
+        Posted by Username <span class="datetime">Time: 8:15 AM</span>
+        <span class="upvotes"><span>14 Upvotes</span> <span>124 Views</span> <span>22 Responses</span></span>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <a href="">What's the answer to question 6?</a><span class="datetime">Date: 6/1/2014</span><br />
+        Posted by Username <span class="datetime">Time: 4:31 PM</span>
+        <span class="upvotes"><span>1 Upvotes</span> <span>27 Views</span> <span>3 Responses</span></span>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <a href="">Still don't get questions 3, 6, and 7</a><span class="datetime">Date: 6/1/2014</span><br />
+        Posted by Username <span class="datetime">Time: 1:15 PM</span>
+        <span class="upvotes"><span>4 Upvotes</span> <span>8 Views</span> <span>2 Responses</span></span>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <a href="">Questions 6 and 7 - HELP!</a><span class="datetime">Date: 5/31/2014</span><br />
+        Posted by Username <span class="datetime">Time: 11:54 AM</span>
+        <span class="upvotes"><span>0 Upvotes</span> <span>45 Views</span> <span>4 Responses</span></span>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <img src="topstudent.png"> 
+        <a href="">Confused by question 7</a><span class="datetime">Date: 5/30/2014</span><br />
+        Posted by Username <span class="datetime">Time: 7:26 PM</span>
+        <span class="upvotes"><span>17 Upvotes</span> <span>67 Views</span> <span>17 Responses</span></span>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <a href="">What am I doing wrong?</a><span class="datetime">Date: 5/28/2014</span><br />
+        Posted by Username <span class="datetime">Time: 11:32 AM</span>
+        <span class="upvotes"><span>2 Upvotes</span> <span>24 Views</span> <span>7 Responses</span></span>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <a href="">Does my answer for #5 make sense?</a><span class="datetime">Date: 5/25/2014</span><br />
+        Posted by Username <span class="datetime">Time: 5:14 PM</span>
+        <span class="upvotes"><span>8 Upvotes</span> <span>48 Views</span> <span>19 Responses</span></span>
+      </td>
+    </tr>
+  </table>
+
+  <table class="board" id="responsesboard">
+    <tr>
+      <td>
+        <img src="coursestaff.png"> 
+        <a href="">How do you solve question 3?</a><span class="datetime">Date: 5/27/2014</span><br />
+        Posted by Username <span class="datetime">Time: 8:15 AM</span>
+        <span class="upvotes"><span>14 Upvotes</span> <span>124 Views</span> <span>22 Responses</span></span>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <a href="">Does my answer for #5 make sense?</a><span class="datetime">Date: 5/25/2014</span><br />
+        Posted by Username <span class="datetime">Time: 5:14 PM</span>
+        <span class="upvotes"><span>8 Upvotes</span> <span>48 Views</span> <span>19 Responses</span></span>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <img src="coursestaff.png"> 
+        <a href="">Error on the week 3 assignment</a><span class="datetime">Date: 5/28/2014</span><br />
+        Posted by Username <span class="datetime">Time: 12:45 PM</span>
+        <span class="upvotes"><span>15 Upvotes</span> <span>103 Views</span> <span>18 Responses</span></span>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <img src="topstudent.png"> 
+        <a href="">Confused by question 7</a><span class="datetime">Date: 5/30/2014</span><br />
+        Posted by Username <span class="datetime">Time: 7:26 PM</span>
+        <span class="upvotes"><span>17 Upvotes</span> <span>67 Views</span> <span>17 Responses</span></span>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <a href="">What am I doing wrong?</a><span class="datetime">Date: 5/28/2014</span><br />
+        Posted by Username <span class="datetime">Time: 11:32 AM</span>
+        <span class="upvotes"><span>2 Upvotes</span> <span>24 Views</span> <span>7 Responses</span></span>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <a href="">Questions 6 and 7 - HELP!</a><span class="datetime">Date: 6/1/2014</span><br />
+        Posted by Username <span class="datetime">Time: 11:54 AM</span>
+        <span class="upvotes"><span>0 Upvotes</span> <span>45 Views</span> <span>4 Responses</span></span>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <a href="">What's the answer to question 6?</a><span class="datetime">Date: 6/1/2014</span><br />
+        Posted by Username <span class="datetime">Time: 4:31 PM</span>
+        <span class="upvotes"><span>1 Upvotes</span> <span>27 Views</span> <span>3 Responses</span></span>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <a href="">Still don't get questions 3, 6, and 7</a><span class="datetime">Date: 6/1/2014</span><br />
+        Posted by Username <span class="datetime">Time: 1:15 PM</span>
+        <span class="upvotes"><span>4 Upvotes</span> <span>8 Views</span> <span>2 Responses</span></span>
+      </td>
+    </tr>
+  </table>
+
+  <table class="board" id="viewsboard">
+    <tr>
+      <td>
+        <img src="coursestaff.png"> 
+        <a href="">How do you solve question 3?</a><span class="datetime">Date: 5/27/2014</span><br />
+        Posted by Username <span class="datetime">Time: 8:15 AM</span>
+        <span class="upvotes"><span>14 Upvotes</span> <span>124 Views</span> <span>22 Responses</span></span>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <img src="coursestaff.png"> 
+        <a href="">Error on the week 3 assignment</a><span class="datetime">Date: 5/28/2014</span><br />
+        Posted by Username <span class="datetime">Time: 12:45 PM</span>
+        <span class="upvotes"><span>15 Upvotes</span> <span>103 Views</span> <span>18 Responses</span></span>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <img src="topstudent.png"> 
+        <a href="">Confused by question 7</a><span class="datetime">Date: 5/30/2014</span><br />
+        Posted by Username <span class="datetime">Time: 7:26 PM</span>
+        <span class="upvotes"><span>17 Upvotes</span> <span>67 Views</span> <span>17 Responses</span></span>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <a href="">Does my answer for #5 make sense?</a><span class="datetime">Date: 5/25/2014</span><br />
+        Posted by Username <span class="datetime">Time: 5:14 PM</span>
+        <span class="upvotes"><span>8 Upvotes</span> <span>48 Views</span> <span>19 Responses</span></span>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <a href="">Questions 6 and 7 - HELP!</a><span class="datetime">Date: 6/1/2014</span><br />
+        Posted by Username <span class="datetime">Time: 11:54 AM</span>
+        <span class="upvotes"><span>0 Upvotes</span> <span>45 Views</span> <span>4 Responses</span></span>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <a href="">What's the answer to question 6?</a><span class="datetime">Date: 6/1/2014</span><br />
+        Posted by Username <span class="datetime">Time: 4:31 PM</span>
+        <span class="upvotes"><span>1 Upvotes</span> <span>27 Views</span> <span>3 Responses</span></span>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <a href="">What am I doing wrong?</a><span class="datetime">Date: 5/28/2014</span><br />
+        Posted by Username <span class="datetime">Time: 11:32 AM</span>
+        <span class="upvotes"><span>2 Upvotes</span> <span>24 Views</span> <span>7 Responses</span></span>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <a href="">Still don't get questions 3, 6, and 7</a><span class="datetime">Date: 6/1/2014</span><br />
+        Posted by Username <span class="datetime">Time: 1:15 PM</span>
+        <span class="upvotes"><span>4 Upvotes</span> <span>8 Views</span> <span>2 Responses</span></span>
+      </td>
+    </tr>
+  </table>
+
+
   <div class="buttons">
     <button class="button">New Post</button>
     <button class="button">Main Board</button>

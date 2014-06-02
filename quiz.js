@@ -10,8 +10,8 @@ var questions = [
 			"Create a fully functional system (with a database of routes, directions and voice-clips etc.) on a laptop, and put the laptop in the car. The participant drives the car along the route, and hears the turn directions from the laptop.",
 			 "Have pre-determined turn-by-turn directions for a particular route written on a notepad. The experimenter reads out the right directions while the participant drives on the route."
 			 ],
-		right: "Why this answer is right",
-		wrong: "Suggested help to get the answer right",
+		right: "<p>Answer correct!</p><p>This prototype recreates the most important conditions (remember we’re trying to test “if drivers can understand and respond to your voice directions while driving”), with the lowest cost. In that sense it is the best of the 4 options.</p>",
+		wrong: "<p>Incorrect. Please try again.</p><p>Hint:</p><ul><li>Rewatch Lecture Video 3.1 on Paper Prototyping.</li><li>Reread Klemmer et al. (2012) in this week’s readings folder.</li><li>Ask for help on the forums.</li></ul>",
 		solution: "2"
 	},
 	{
@@ -126,11 +126,11 @@ var questions = [
 
 var pass = {
 		heading: "Nice Job!",
-		text: "You did great! Keep up the good work and consider checking in on the forums to see if any other students need help completing this quiz."
+		text: "<p>You did great! Keep up the good work and consider checking in on the forums to see if any other students need help completing this quiz.</p>"
 	};
 var fail = {
 		heading: "Nice Try!",
-		text: "It looks like you had a little bit of trouble completing this quiz.<br />We have added an additional video for you this week that will help you master these concepts."
+		text: "<p>It looks like you had a little bit of trouble completing this quiz.</p><p>We have added an additional video for you this week that will help you master these concepts.</p>"
 	};
 
 $(document).ready(function() {
