@@ -10,7 +10,7 @@ var questions = [
 			"Create a fully functional system (with a database of routes, directions and voice-clips etc.) on a laptop, and put the laptop in the car. The participant drives the car along the route, and hears the turn directions from the laptop.",
 			 "Have pre-determined turn-by-turn directions for a particular route written on a notepad. The experimenter reads out the right directions while the participant drives on the route."
 			 ],
-		right: "<p>Answer correct!</p><p>This prototype recreates the most important conditions (remember we’re trying to test “if drivers can understand and respond to your voice directions while driving”), with the lowest cost. In that sense it is the best of the 4 options.</p>",
+		right: "<p>Answer correct!</p><p>This prototype recreates the most important conditions (remember we’re trying to test “if drivers can understand and respond to your voice directions while driving”), with the lowest cost. In that sense it is the best of the 4 options.</p><p>If you want to learn more about this topic, check out optional reading 3 for this week.</p>",
 		wrong: "<p>Incorrect. Please try again.</p><p>Hint:</p><ul><li>Rewatch Lecture Video 3.1 on Paper Prototyping.</li><li>Reread Klemmer et al. (2012) in this week’s readings folder.</li><li>Ask for help on the forums.</li></ul>",
 		solution: "2"
 	},
